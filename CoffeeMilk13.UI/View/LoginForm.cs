@@ -14,6 +14,12 @@ namespace CoffeeMilk13.UI.View
 {
     public partial class LoginForm : DevExpress.XtraEditors.XtraForm
     {
+        #region 基础参数
+        public static MainForm mainForm = null;
+
+        #endregion
+
+
         public LoginForm()
         {
             InitializeComponent();
@@ -62,5 +68,13 @@ namespace CoffeeMilk13.UI.View
 
         }
 
+        private void simpleButton_Login_Click(object sender, EventArgs e)
+        {
+
+            Utils.WinformUIHelper.OpenForm(ref mainForm);
+            this.Hide();
+
+
+        }
     }
 }

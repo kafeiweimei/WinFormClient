@@ -65,9 +65,9 @@ namespace CoffeeMilk13.UI.View
             this.labelControl_Company.Appearance.Font = new System.Drawing.Font("思源黑体 CN", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.labelControl_Company.Appearance.Options.UseFont = true;
             this.labelControl_Company.Location = new System.Drawing.Point(361, 6);
-            this.labelControl_Company.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelControl_Company.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl_Company.Name = "labelControl_Company";
-            this.labelControl_Company.Size = new System.Drawing.Size(76, 28);
+            this.labelControl_Company.Size = new System.Drawing.Size(60, 22);
             this.labelControl_Company.TabIndex = 3;
             this.labelControl_Company.Text = "开发公司";
             // 
@@ -79,7 +79,7 @@ namespace CoffeeMilk13.UI.View
             this.labelControl_Version.Location = new System.Drawing.Point(12, 6);
             this.labelControl_Version.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl_Version.Name = "labelControl_Version";
-            this.labelControl_Version.Size = new System.Drawing.Size(57, 28);
+            this.labelControl_Version.Size = new System.Drawing.Size(45, 22);
             this.labelControl_Version.TabIndex = 2;
             this.labelControl_Version.Text = "版本号";
             // 
@@ -124,6 +124,7 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton_Login.Size = new System.Drawing.Size(406, 37);
             this.simpleButton_Login.TabIndex = 2;
             this.simpleButton_Login.Text = "登录";
+            this.simpleButton_Login.Click += new System.EventHandler(this.simpleButton_Login_Click);
             // 
             // labelControl_Password
             // 
@@ -132,7 +133,7 @@ namespace CoffeeMilk13.UI.View
             this.labelControl_Password.Location = new System.Drawing.Point(284, 123);
             this.labelControl_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl_Password.Name = "labelControl_Password";
-            this.labelControl_Password.Size = new System.Drawing.Size(46, 33);
+            this.labelControl_Password.Size = new System.Drawing.Size(38, 28);
             this.labelControl_Password.TabIndex = 1;
             this.labelControl_Password.Text = "密码";
             // 
@@ -154,7 +155,7 @@ namespace CoffeeMilk13.UI.View
             this.labelControl_Account.Location = new System.Drawing.Point(284, 54);
             this.labelControl_Account.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl_Account.Name = "labelControl_Account";
-            this.labelControl_Account.Size = new System.Drawing.Size(46, 33);
+            this.labelControl_Account.Size = new System.Drawing.Size(38, 28);
             this.labelControl_Account.TabIndex = 0;
             this.labelControl_Account.Text = "工号";
             // 
@@ -171,7 +172,7 @@ namespace CoffeeMilk13.UI.View
             // LoginForm
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 326);
             this.Controls.Add(this.panelControl2);

@@ -1,6 +1,7 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace CoffeeMilk13.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            ////是否启用全局的动画效果（优先级大于单个窗体的效果）
+            //WindowsFormsSettings.AnimationMode = AnimationMode.EnableAll;
             Application.Run(new View.LoginForm());
         }
     }
