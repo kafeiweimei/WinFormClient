@@ -91,6 +91,7 @@ namespace CoffeeMilk13.UI.View
             // 
             // skinDropDownButtonItem2
             // 
+            this.skinDropDownButtonItem2.Hint = "设置皮肤";
             this.skinDropDownButtonItem2.Id = 9;
             this.skinDropDownButtonItem2.Name = "skinDropDownButtonItem2";
             // 
@@ -100,6 +101,7 @@ namespace CoffeeMilk13.UI.View
             this.barListItem_FunctionModule.Id = 10;
             this.barListItem_FunctionModule.Name = "barListItem_FunctionModule";
             this.barListItem_FunctionModule.ListItemClick += new DevExpress.XtraBars.ListItemClickEventHandler(this.barListItem_FunctionModule_ListItemClick);
+            this.barListItem_FunctionModule.ItemDoubleClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barListItem_FunctionModule_ItemDoubleClick);
             // 
             // barButtonItem_ClearAllTabPage
             // 

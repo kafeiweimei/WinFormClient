@@ -178,6 +178,15 @@ F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winf
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.pdb
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.MenuSettingForm.resources
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.RoleSettingForm.resources
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.FunctionModuleForm.resources
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.FunctionModuleForm2.resources
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraNavBar.v20.1.dll
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraNavBar.v20.1.xml
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\de\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\es\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\ja\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\ru\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\zh-CN\DevExpress.XtraNavBar.v20.1.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\images\LoopImg\1.jpg
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\images\LoopImg\2.jpg
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\images\LoopImg\3.jpg
@@ -196,6 +205,7 @@ F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraEditors.v20.1.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraGrid.v20.1.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraLayout.v20.1.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraNavBar.v20.1.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
@@ -211,6 +221,7 @@ F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.Printing.v20.1.Core.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraGrid.v20.1.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraLayout.v20.1.xml
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraNavBar.v20.1.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.XtraPrinting.v20.1.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
@@ -257,6 +268,11 @@ F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\ja\DevExpress.XtraLayout.v20.1.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\ru\DevExpress.XtraLayout.v20.1.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\zh-CN\DevExpress.XtraLayout.v20.1.resources.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\de\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\es\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\ja\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\ru\DevExpress.XtraNavBar.v20.1.resources.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\zh-CN\DevExpress.XtraNavBar.v20.1.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
@@ -284,6 +300,8 @@ F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\zh-CN\DevExpress.Office.v20.1.Core.resources.dll
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.csproj.AssemblyReference.cache
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.Properties.Resources.resources
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.FunctionModuleForm.resources
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.FunctionModuleForm2.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.LoginForm.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.MainForm.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.MenuSettingForm.resources

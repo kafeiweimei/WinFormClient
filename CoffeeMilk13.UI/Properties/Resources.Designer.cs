@@ -63,6 +63,26 @@ namespace CoffeeMilk13.UI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap bubble3d_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("bubble3d_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap customizegrid_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("customizegrid_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap deletelist_16x16 {
             get {
                 object obj = ResourceManager.GetObject("deletelist_16x16", resourceCulture);
@@ -81,11 +101,71 @@ namespace CoffeeMilk13.UI.Properties {
         }
         
         /// <summary>
+        ///   查找 DevExpress.Utils.Svg.SvgImage 类型的本地化资源。
+        /// </summary>
+        internal static DevExpress.Utils.Svg.SvgImage detailed {
+            get {
+                object obj = ResourceManager.GetObject("detailed", resourceCulture);
+                return ((DevExpress.Utils.Svg.SvgImage)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap formatcells_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("formatcells_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap initialstate_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("initialstate_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap showall_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("showall_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 功能菜单 {
+            get {
+                object obj = ResourceManager.GetObject("功能菜单", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 系统服务 {
+            get {
+                object obj = ResourceManager.GetObject("系统服务", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

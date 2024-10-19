@@ -14,6 +14,8 @@ namespace CoffeeMilk13.UI.View
     public partial class MainForm : DevExpress.XtraBars.TabForm
     {
         #region 基础参数
+        //功能模块窗体
+        public static FunctionModuleForm functionModuleForm = null;
         //当前选中的功能模块名称
         private string curSelectedFuncModuleName = string.Empty;
         //当前选中的功能菜单名称
@@ -103,7 +105,9 @@ namespace CoffeeMilk13.UI.View
 
 
 
-        //窗体参数设置
+        /// <summary>
+        /// 窗体参数设置
+        /// </summary>
         private void FormParaSetting()
         {
             //设置窗体最大化
@@ -156,7 +160,9 @@ namespace CoffeeMilk13.UI.View
             #endregion
         }
 
-        //功能模块菜单
+        /// <summary>
+        /// 功能模块菜单
+        /// </summary>
         private void FunctionModuleMenu()
         {
             barListItem_FunctionModule.Strings.Add("功能模块1");
@@ -164,7 +170,9 @@ namespace CoffeeMilk13.UI.View
             barListItem_FunctionModule.Strings.Add("系统管理");
         }
 
-        //当前选中的功能模块对应的列表菜单
+        /// <summary>
+        /// 当前选中的功能模块对应的列表菜单
+        /// </summary>
         private void ListMenuOfCurSelectedFuncModule()
         {
             barListItem_FunctionList.Strings.Add("菜单设置");
@@ -172,7 +180,9 @@ namespace CoffeeMilk13.UI.View
             barListItem_FunctionList.Strings.Add("其他设置");
         }
 
-        //创建新标签页事件
+        /// <summary>
+        /// 创建新标签页事件
+        /// </summary>
         private void CreateNewTagPageEvent()
         {
             tabFormControl1.PageCreated += (sender, e) =>
@@ -200,9 +210,11 @@ namespace CoffeeMilk13.UI.View
             };
         }
 
-        
 
-        //关闭当前选中标签页事件
+
+        /// <summary>
+        /// 关闭当前选中标签页事件
+        /// </summary>
         private void CloseCurSelectedTagPageEvent()
         {
             tabFormControl1.PageClosed += (sender, e) =>
@@ -212,7 +224,12 @@ namespace CoffeeMilk13.UI.View
         }
 
 
-        //在标签页显示传入的窗体
+        /// <summary>
+        /// 在标签页显示传入的窗体
+        /// </summary>
+        /// <typeparam name="TForm">窗体类型</typeparam>
+        /// <param name="form">窗体</param>
+        /// <param name="tabFormPage">标签页</param>
         private void ShowFormOfPage<TForm>(TForm form, DevExpress.XtraBars.TabFormPage tabFormPage) where TForm : Form, new()
         {
             if (form == null || form.IsDisposed)
@@ -228,16 +245,25 @@ namespace CoffeeMilk13.UI.View
             form.Show();
         }
 
-        //功能模块的单个内容选定事件
+        /// <summary>
+        /// 功能模块的单个内容选定事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void barListItem_FunctionModule_ListItemClick(object sender, DevExpress.XtraBars.ListItemClickEventArgs e)
         {
             DevExpress.XtraBars.BarListItem barListItem = (DevExpress.XtraBars.BarListItem)sender;
             string curSelectedItemName = barListItem.Strings[e.Index];
-            XtraMessageBox.Show($"当前选中的模块是：{curSelectedItemName}");
+            //XtraMessageBox.Show($"当前选中的模块是：{curSelectedItemName}");
+            barListItem_FunctionList.Caption = curSelectedItemName;
             curSelectedFuncModuleName = curSelectedItemName;
         }
 
-        //功能列表内容选定事件
+        /// <summary>
+        /// 功能列表内容选定事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void barListItem_FunctionList_ListItemClick(object sender, DevExpress.XtraBars.ListItemClickEventArgs e)
         {
             DevExpress.XtraBars.BarListItem barListItem = (DevExpress.XtraBars.BarListItem)sender;
@@ -275,17 +301,26 @@ namespace CoffeeMilk13.UI.View
            
         }
 
-        //清空所有已经打开的页面
+        /// <summary>
+        /// 清空按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void barButtonItem_ClearAllTabPage_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DialogResult mark = XtraMessageBox.Show($"是否确定关闭当前已经打开的所有页面？","系统提示",MessageBoxButtons.OKCancel);
             if (mark.Equals(DialogResult.OK))
             {
+                //清空所有已经打开的页面
                 tabFormControl1.Pages.Clear();
             }
         }
 
-        //当前选中页事件
+        /// <summary>
+        /// 当前选中页事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabFormControl1_SelectedPageChanged(object sender, DevExpress.XtraBars.TabFormSelectedPageChangedEventArgs e)
         {
             if (e.Page == null || e.PrevPage==null)
@@ -299,10 +334,27 @@ namespace CoffeeMilk13.UI.View
             e.Page.ShowCloseButton = DevExpress.Utils.DefaultBoolean.True;
         }
 
+        /// <summary>
+        /// 重载窗体大小
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Resize(object sender, EventArgs e)
         {
             //重置窗口布局
             ReWinformLayout();
+        }
+
+        /// <summary>
+        /// 功能模块按钮双击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void barListItem_FunctionModule_ItemDoubleClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //返回功能模块窗口
+            Utils.WinformUIHelper.OpenForm(ref functionModuleForm);
+            this.Hide();
         }
     }
 }
