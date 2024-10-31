@@ -1,7 +1,7 @@
 ﻿
 namespace CoffeeMilk13.UI.View
 {
-    partial class RoleSettingForm
+    partial class AuthoritySettingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@ namespace CoffeeMilk13.UI.View
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1356, 120);
+            this.panelControl1.Size = new System.Drawing.Size(1125, 120);
             this.panelControl1.TabIndex = 0;
             // 
             // treeList1
@@ -52,37 +52,36 @@ namespace CoffeeMilk13.UI.View
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeList1.Location = new System.Drawing.Point(0, 120);
             this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(544, 616);
+            this.treeList1.Size = new System.Drawing.Size(404, 456);
             this.treeList1.TabIndex = 1;
             // 
             // treeList2
             // 
             this.treeList2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.treeList2.Location = new System.Drawing.Point(715, 120);
+            this.treeList2.Location = new System.Drawing.Point(562, 120);
             this.treeList2.Name = "treeList2";
-            this.treeList2.Size = new System.Drawing.Size(641, 616);
+            this.treeList2.Size = new System.Drawing.Size(563, 456);
             this.treeList2.TabIndex = 2;
             // 
             // panelControl2
             // 
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(544, 120);
+            this.panelControl2.Location = new System.Drawing.Point(404, 120);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(171, 616);
+            this.panelControl2.Size = new System.Drawing.Size(158, 456);
             this.panelControl2.TabIndex = 3;
             // 
-            // RoleSettingForm
+            // AuthoritySettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 736);
+            this.ClientSize = new System.Drawing.Size(1125, 576);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.treeList2);
             this.Controls.Add(this.treeList1);
             this.Controls.Add(this.panelControl1);
-            this.Name = "RoleSettingForm";
-            this.Text = "角色设置";
-            this.Resize += new System.EventHandler(this.RoleSettingForm_Resize);
+            this.Name = "AuthoritySettingForm";
+            this.Text = "权限设置";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).EndInit();

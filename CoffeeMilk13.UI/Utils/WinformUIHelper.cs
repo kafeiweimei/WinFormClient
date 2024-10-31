@@ -44,6 +44,7 @@ using DevExpress.XtraLayout;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -900,6 +901,16 @@ namespace CoffeeMilk13.UI.Utils
         }
 
         #endregion
+
+        /// <summary>
+        /// 设置行选中颜色
+        /// </summary>
+        /// <param name="gridView"></param>
+        public static void DataGridViewRowFocusedColor(DevExpress.XtraGrid.Views.Grid.GridView gridView)
+        {
+            gridView.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(50, 150, 150, 150);
+            gridView.Appearance.FocusedRow.BackColor = Color.FromArgb(80, 150, 150, 150);
+        }
 
         #endregion
 

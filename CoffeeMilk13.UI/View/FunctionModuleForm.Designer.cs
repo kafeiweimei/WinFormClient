@@ -35,6 +35,7 @@ namespace CoffeeMilk13.UI.View
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -44,7 +45,6 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +107,12 @@ namespace CoffeeMilk13.UI.View
             this.bar3.OptionsBar.DrawDragBorder = false;
             this.bar3.OptionsBar.UseWholeRow = true;
             this.bar3.Text = "状态栏";
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "程序状态和版本信息";
+            this.barStaticItem1.Id = 4;
+            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // barDockControlTop
             // 
@@ -200,12 +206,6 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton3.Size = new System.Drawing.Size(256, 256);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "功能模块1示例";
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Caption = "程序状态和版本信息";
-            this.barStaticItem1.Id = 4;
-            this.barStaticItem1.Name = "barStaticItem1";
             // 
             // FunctionModuleForm
             // 

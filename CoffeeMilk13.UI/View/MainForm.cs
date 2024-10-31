@@ -177,6 +177,7 @@ namespace CoffeeMilk13.UI.View
         {
             barListItem_FunctionList.Strings.Add("菜单设置");
             barListItem_FunctionList.Strings.Add("角色设置");
+            barListItem_FunctionList.Strings.Add("权限设置");
             barListItem_FunctionList.Strings.Add("其他设置");
         }
 
@@ -196,6 +197,10 @@ namespace CoffeeMilk13.UI.View
                     case "角色设置":
                         e.Page.Text = "角色设置";
                         ShowFormOfPage(new RoleSettingForm(), e.Page);
+                        break;
+                    case "权限设置":
+                        e.Page.Text = "权限";
+                        ShowFormOfPage(new AuthoritySettingForm(), e.Page);
                         break;
                     default:
                         //XtraMessageBox.Show($"当前没配置:{e.Page} 菜单");
