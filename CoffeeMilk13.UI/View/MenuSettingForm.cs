@@ -92,6 +92,7 @@ namespace CoffeeMilk13.UI.View
             InitPara();
             AddFieldToDataTable(ref _dt);
             AddFieldAndDescToGridView(gridView1,_fieldAndDescNameDic);
+            ShowAllMenuInfoToGridView();
 
         }
 
@@ -199,6 +200,20 @@ namespace CoffeeMilk13.UI.View
                     gridView.OptionsView.BestFitMode = DevExpress.XtraGrid.Views.Grid.GridBestFitMode.Default;
                 }
             }
+        }
+
+        /// <summary>
+        /// 展示所有的菜单内容到表格中
+        /// </summary>
+        private void ShowAllMenuInfoToGridView()
+        {
+            _dt?.Clear();
+            foreach (var item in Global.Global_Parameter.tmpMenuDic)
+            {
+                _dt.Rows.Add(item.Key, item.Value);
+            }
+
+            ShowDataToGridView(_dt);
         }
 
         //显示数据到表格中

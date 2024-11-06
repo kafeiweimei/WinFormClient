@@ -553,6 +553,34 @@ namespace CoffeeMilk13.UI.Utils
         /// <summary>
         /// 给Datatable添加一列内容
         /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="listDatas">列表数据</param>
+        /// <param name="fieldNameList">DataTable表的字段</param>
+        /// <param name="dt">DataTable表</param>
+        public static void AddOneColumnDatasToDataTable2<T>(List<T> listDatas,
+            string fieldName, ref DataTable dt)
+        {
+            if (listDatas != null && listDatas.Count > 0 && !string.IsNullOrEmpty(fieldName) && dt != null)
+            {
+                DataColumn dc = null;
+
+                if (!dt.Columns.Contains(fieldName))
+                {
+                    dc = dt.Columns.Add(fieldName, typeof(string));
+                }
+                int count = listDatas.Count;
+                for (int i = 0; i < count; i++)
+                {
+                    DataRow dr = dt.NewRow();
+                    dr[fieldName] = listDatas[i];
+                    dt.Rows.Add(dr);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 给Datatable添加一列内容
+        /// </summary>
         /// <param name="haveDataTable">有数据的表</param>
         /// <param name="haveDataTableColumnFieldName">有数据表的列名称</param>
         /// <param name="dt">需添加列内容的表</param>

@@ -37,14 +37,44 @@ namespace Global
         #endregion
 
         #region   3-配置文件名称
-        //IP地址列表文件名称
-        public const string IPLISTNAME = "IPAddressList.xml";
+
 
         #endregion
 
         #region   临时字典
-        //临时字典
-        public static Dictionary<string, string> tmpMenuDic = new Dictionary<string, string>();
+        //临时菜单字典
+        public static Dictionary<string, string> tmpMenuDic = new Dictionary<string, string>
+        {
+            ["功能模块设置"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm",
+            ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
+            ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
+        };
+        //临时功能模块字典
+        public static Dictionary<string, Dictionary<string, string>> tmpFuncModuleDic = new Dictionary<string, Dictionary<string, string>>
+        {
+            ["系统功能"] =tmpMenuDic,
+            //["系统功能"]=new Dictionary<string, string> 
+            //{ 
+            //    ["功能模块设置"]="CoffeeMilk13.UI.View.FunctionModuleSettingForm",
+            //    ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
+            //    ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
+            //},
+            ["业务功能2"] = new Dictionary<string, string>
+            {
+                ["菜单21"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm2",
+                ["菜单22"] = "CoffeeMilk13.UI.View.MenuSettingForm2",
+                ["菜单23"] = "CoffeeMilk13.UI.View.AuthoritySettingForm2"
+            },
+            ["业务功能3"] = new Dictionary<string, string>
+            {
+                ["菜单31"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm3",
+                ["菜单32"] = "CoffeeMilk13.UI.View.MenuSettingForm3",
+                ["菜单33"] = "CoffeeMilk13.UI.View.AuthoritySettingForm3"
+            },
+
+
+        };
+        
 
         #endregion
 

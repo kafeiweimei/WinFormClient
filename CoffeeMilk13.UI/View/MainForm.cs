@@ -175,6 +175,7 @@ namespace CoffeeMilk13.UI.View
         /// </summary>
         private void ListMenuOfCurSelectedFuncModule()
         {
+            barListItem_FunctionList.Strings.Add("功能模块设置");
             barListItem_FunctionList.Strings.Add("菜单设置");
             barListItem_FunctionList.Strings.Add("角色设置");
             barListItem_FunctionList.Strings.Add("权限设置");
@@ -190,6 +191,10 @@ namespace CoffeeMilk13.UI.View
             {
                 switch (curSelectedFuncMenuName)
                 {
+                    case "功能模块设置":
+                        e.Page.Text = "功能模块设置";
+                        ShowFormOfPage(new FunctionModuleSettingForm(), e.Page);
+                        break;
                     case "菜单设置":
                         e.Page.Text = "菜单设置";
                         ShowFormOfPage(new MenuSettingForm(), e.Page);
