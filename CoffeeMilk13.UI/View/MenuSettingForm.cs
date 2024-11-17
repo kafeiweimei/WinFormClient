@@ -68,6 +68,7 @@ namespace CoffeeMilk13.UI.View
             var newy = Height / y;
             setControls(newx, newy, this);
 
+            this.Controls[0].Focus();
         }
 
         #endregion
@@ -152,7 +153,7 @@ namespace CoffeeMilk13.UI.View
             GridControlHelper.SetAppointHeaderAlignment(gridView1, 0, gridView1.Columns.Count - 1, DevExpress.Utils.HorzAlignment.Center);
             
             // 设置行选中颜色
-            GridControlHelper.SetSelectedRowColor(gridView1, Color.Aqua, Color.Orange);
+            GridControlHelper.SetSelectedRowColor(gridView1, Color.FromArgb(0, 105, 194), Color.Orange);
             //设置表格不可编辑
             GridControlHelper.IsAllowEditGridView(gridView1, false);
             //表格列自动适配
@@ -162,7 +163,29 @@ namespace CoffeeMilk13.UI.View
             ////打开横向滑动条
             //gridView1.OptionsView.ColumnAutoWidth = false;
 
+            SetSelectedRowEvent(gridView1);
 
+        }
+
+        //选中行事件
+        private void SetSelectedRowEvent(DevExpress.XtraGrid.Views.Grid.GridView gridView)
+        {
+            gridView.RowClick += (sender, e) => {
+
+                if (e.RowHandle >= 0)
+                {
+                    // 获取选中行的数据
+                    var row = (System.Data.DataRowView)gridView.GetRow(e.RowHandle);
+                    if (row != null)
+                    {
+                        textEdit_MenuName.EditValue = row[0].ToString();
+                        textEdit_MenuNameSpace.EditValue = row[1].ToString();
+                    }
+                }
+
+            };
+
+           
         }
 
         /// <summary>
@@ -245,5 +268,14 @@ namespace CoffeeMilk13.UI.View
                          }
                  }
         }
+
+        private void simpleButton_Clear_Click(object sender, EventArgs e)
+        {
+            textEdit_MenuName.Text = string.Empty;
+            textEdit_MenuNameSpace.Text = string.Empty;
+        }
+
+       
+
     }
 }

@@ -298,6 +298,7 @@ namespace CoffeeMilk13.UI.View
             this.Name = "MainForm";
             this.TabFormControl = this.tabFormControl1;
             this.Text = "牛奶咖啡13系统";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.tabFormControl1)).EndInit();

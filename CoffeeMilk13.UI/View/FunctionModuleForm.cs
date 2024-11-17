@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using CoffeeMilk13.UI.Utils;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -157,6 +158,14 @@ namespace CoffeeMilk13.UI.View
             ReWinformLayout();
         }
 
+        private void FunctionModuleForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bool isExit = PopupMessage.ShowAskQuestion("确定关闭系统？");
+            if (isExit)
+            {
+                Application.Exit();
+            }
 
+        }
     }
 }

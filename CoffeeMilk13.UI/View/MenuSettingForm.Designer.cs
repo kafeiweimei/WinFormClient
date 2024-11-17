@@ -37,8 +37,8 @@ namespace CoffeeMilk13.UI.View
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton_Add = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton_Modify = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton_AddOrModify = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton_Clear = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_Delete = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_Export = new DevExpress.XtraEditors.SimpleButton();
             this.MenuNameSpace = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -133,30 +133,31 @@ namespace CoffeeMilk13.UI.View
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
-            // simpleButton_Add
+            // simpleButton_AddOrModify
             // 
-            this.simpleButton_Add.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
-            this.simpleButton_Add.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.simpleButton_Add.Appearance.Options.UseBackColor = true;
-            this.simpleButton_Add.Appearance.Options.UseFont = true;
-            this.simpleButton_Add.Location = new System.Drawing.Point(863, 60);
-            this.simpleButton_Add.Name = "simpleButton_Add";
-            this.simpleButton_Add.Size = new System.Drawing.Size(92, 34);
-            this.simpleButton_Add.TabIndex = 5;
-            this.simpleButton_Add.Text = "添加";
-            this.simpleButton_Add.Click += new System.EventHandler(this.simpleButton_Add_Click);
+            this.simpleButton_AddOrModify.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Success;
+            this.simpleButton_AddOrModify.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.simpleButton_AddOrModify.Appearance.Options.UseBackColor = true;
+            this.simpleButton_AddOrModify.Appearance.Options.UseFont = true;
+            this.simpleButton_AddOrModify.Location = new System.Drawing.Point(863, 60);
+            this.simpleButton_AddOrModify.Name = "simpleButton_AddOrModify";
+            this.simpleButton_AddOrModify.Size = new System.Drawing.Size(92, 34);
+            this.simpleButton_AddOrModify.TabIndex = 5;
+            this.simpleButton_AddOrModify.Text = "增改";
+            this.simpleButton_AddOrModify.Click += new System.EventHandler(this.simpleButton_Add_Click);
             // 
-            // simpleButton_Modify
+            // simpleButton_Clear
             // 
-            this.simpleButton_Modify.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
-            this.simpleButton_Modify.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.simpleButton_Modify.Appearance.Options.UseBackColor = true;
-            this.simpleButton_Modify.Appearance.Options.UseFont = true;
-            this.simpleButton_Modify.Location = new System.Drawing.Point(970, 60);
-            this.simpleButton_Modify.Name = "simpleButton_Modify";
-            this.simpleButton_Modify.Size = new System.Drawing.Size(92, 34);
-            this.simpleButton_Modify.TabIndex = 6;
-            this.simpleButton_Modify.Text = "修改";
+            this.simpleButton_Clear.Appearance.BackColor = DevExpress.LookAndFeel.DXSkinColors.FillColors.Warning;
+            this.simpleButton_Clear.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.simpleButton_Clear.Appearance.Options.UseBackColor = true;
+            this.simpleButton_Clear.Appearance.Options.UseFont = true;
+            this.simpleButton_Clear.Location = new System.Drawing.Point(970, 60);
+            this.simpleButton_Clear.Name = "simpleButton_Clear";
+            this.simpleButton_Clear.Size = new System.Drawing.Size(92, 34);
+            this.simpleButton_Clear.TabIndex = 6;
+            this.simpleButton_Clear.Text = "清空";
+            this.simpleButton_Clear.Click += new System.EventHandler(this.simpleButton_Clear_Click);
             // 
             // simpleButton_Delete
             // 
@@ -199,8 +200,8 @@ namespace CoffeeMilk13.UI.View
             this.ClientSize = new System.Drawing.Size(1281, 582);
             this.Controls.Add(this.simpleButton_Export);
             this.Controls.Add(this.simpleButton_Delete);
-            this.Controls.Add(this.simpleButton_Modify);
-            this.Controls.Add(this.simpleButton_Add);
+            this.Controls.Add(this.simpleButton_Clear);
+            this.Controls.Add(this.simpleButton_AddOrModify);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelControl_MenuNameSpace);
             this.Controls.Add(this.textEdit_MenuNameSpace);
@@ -228,8 +229,8 @@ namespace CoffeeMilk13.UI.View
         private DevExpress.XtraEditors.TextEdit textEdit_MenuNameSpace;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton_Add;
-        private DevExpress.XtraEditors.SimpleButton simpleButton_Modify;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_AddOrModify;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_Clear;
         private DevExpress.XtraEditors.SimpleButton simpleButton_Delete;
         private DevExpress.XtraEditors.SimpleButton simpleButton_Export;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

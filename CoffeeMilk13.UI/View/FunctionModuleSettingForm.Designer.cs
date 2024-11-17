@@ -99,7 +99,7 @@ namespace CoffeeMilk13.UI.View
             // 
             this.textEdit_FunctionModuleName.Location = new System.Drawing.Point(16, 37);
             this.textEdit_FunctionModuleName.Name = "textEdit_FunctionModuleName";
-            this.textEdit_FunctionModuleName.Properties.Appearance.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit_FunctionModuleName.Properties.Appearance.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textEdit_FunctionModuleName.Properties.Appearance.Options.UseFont = true;
             this.textEdit_FunctionModuleName.Size = new System.Drawing.Size(484, 24);
             this.textEdit_FunctionModuleName.TabIndex = 13;

@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using CoffeeMilk13.UI.Utils;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -248,11 +249,12 @@ namespace CoffeeMilk13.UI.View
             }
 
             //设置窗体不会被移动
-            //form.FormBorderStyle = FormBorderStyle.None;
+            form.FormBorderStyle = FormBorderStyle.None;
             form.TopLevel = false;
             form.Parent = tabFormPage.ContentContainer;
             form.Dock= DockStyle.Fill;
             form.Show();
+
         }
 
         /// <summary>
@@ -365,6 +367,16 @@ namespace CoffeeMilk13.UI.View
             //返回功能模块窗口
             Utils.WinformUIHelper.OpenForm(ref functionModuleForm);
             this.Hide();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bool isExit = PopupMessage.ShowAskQuestion("确定关闭系统？");
+            if (isExit)
+            {
+                Application.Exit();
+            }
+           
         }
     }
 }

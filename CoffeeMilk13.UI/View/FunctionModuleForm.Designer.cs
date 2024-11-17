@@ -220,6 +220,7 @@ namespace CoffeeMilk13.UI.View
             this.IconOptions.LargeImage = global::CoffeeMilk13.UI.Properties.Resources.bubble3d_32x32;
             this.Name = "FunctionModuleForm";
             this.Text = "功能模块";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FunctionModuleForm_FormClosed);
             this.Load += new System.EventHandler(this.FunctionModuleForm_Load);
             this.Resize += new System.EventHandler(this.FunctionModuleForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

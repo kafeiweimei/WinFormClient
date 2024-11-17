@@ -17,6 +17,7 @@ namespace CoffeeMilk13.UI.View
         #region 基础参数
         public static MainForm mainForm = null;
         public static FunctionModuleForm functionModuleForm = null;
+        public static MenuSettingForm menuSettingForm = null;
 
         #endregion
 
@@ -77,6 +78,9 @@ namespace CoffeeMilk13.UI.View
 
             Utils.WinformUIHelper.OpenForm(ref functionModuleForm);
             this.Hide();
+
+            //Utils.WinformUIHelper.OpenForm(ref menuSettingForm);
+            //this.Hide();
 
 
         }

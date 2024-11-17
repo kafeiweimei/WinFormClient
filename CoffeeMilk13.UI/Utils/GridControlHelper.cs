@@ -177,12 +177,24 @@ namespace CoffeeMilk13.UI.Utils
         /// <summary>
         /// 设置选中行颜色
         /// </summary>
-        /// <param name="gridView">GridView组件</param>
-        public static void SetSelectedRowColor(GridView gridView, Color selectedRowColor, Color focusedColor)
+        /// <param name="gridView">gridView表格</param>
+        /// <param name="selectedRowColor">选中行的背景颜色</param>
+        /// <param name="focusedColor">字体颜色</param>
+        public static void SetSelectedRowColor(GridView gridView, Color selectedRowBackColor, Color fontColor)
         {
-            gridView.Appearance.SelectedRow.BackColor = selectedRowColor;
-            gridView.Appearance.FocusedRow.BackColor = focusedColor;
+            gridView.OptionsSelection.EnableAppearanceFocusedRow = true;
+            gridView.OptionsSelection.EnableAppearanceFocusedCell = false;
+
+            gridView.Appearance.FocusedRow.BackColor = selectedRowBackColor;
+            gridView.Appearance.FocusedRow.ForeColor = fontColor;
+            gridView.Appearance.FocusedRow.Font = new Font(gridView.Appearance.Row.Font, FontStyle.Bold);
+
+            gridView.Appearance.FocusedRow.Options.UseBackColor = true;
+            gridView.Appearance.FocusedRow.Options.UseForeColor = true;
+            gridView.Appearance.FocusedRow.Options.UseFont = true;
         }
+
+
 
         /// <summary>
         /// 设置奇偶行背景颜色，统一风格

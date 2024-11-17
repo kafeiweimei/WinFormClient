@@ -29,14 +29,17 @@ namespace CoffeeMilk13.UI.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             this.treeList2 = new DevExpress.XtraTreeList.TreeList();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -86,6 +89,7 @@ namespace CoffeeMilk13.UI.View
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,5 +100,6 @@ namespace CoffeeMilk13.UI.View
         private DevExpress.XtraTreeList.TreeList treeList1;
         private DevExpress.XtraTreeList.TreeList treeList2;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }
