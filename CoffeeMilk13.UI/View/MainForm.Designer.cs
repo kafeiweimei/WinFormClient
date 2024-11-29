@@ -31,7 +31,7 @@ namespace CoffeeMilk13.UI.View
         {
             this.components = new System.ComponentModel.Container();
             this.tabFormControl1 = new DevExpress.XtraBars.TabFormControl();
-            this.barListItem_FunctionList = new DevExpress.XtraBars.BarListItem();
+            this.barListItem_FunctionMenuList = new DevExpress.XtraBars.BarListItem();
             this.skinDropDownButtonItem2 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.barListItem_FunctionModule = new DevExpress.XtraBars.BarListItem();
             this.barButtonItem_ClearAllTabPage = new DevExpress.XtraBars.BarButtonItem();
@@ -64,7 +64,7 @@ namespace CoffeeMilk13.UI.View
             // tabFormControl1
             // 
             this.tabFormControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barListItem_FunctionList,
+            this.barListItem_FunctionMenuList,
             this.skinDropDownButtonItem2,
             this.barListItem_FunctionModule,
             this.barButtonItem_ClearAllTabPage});
@@ -75,19 +75,19 @@ namespace CoffeeMilk13.UI.View
             this.tabFormControl1.Size = new System.Drawing.Size(1096, 51);
             this.tabFormControl1.TabForm = this;
             this.tabFormControl1.TabIndex = 0;
-            this.tabFormControl1.TabLeftItemLinks.Add(this.barListItem_FunctionList);
+            this.tabFormControl1.TabLeftItemLinks.Add(this.barListItem_FunctionMenuList);
             this.tabFormControl1.TabRightItemLinks.Add(this.barListItem_FunctionModule);
             this.tabFormControl1.TabRightItemLinks.Add(this.barButtonItem_ClearAllTabPage);
             this.tabFormControl1.TabRightItemLinks.Add(this.skinDropDownButtonItem2);
             this.tabFormControl1.TabStop = false;
             this.tabFormControl1.SelectedPageChanged += new DevExpress.XtraBars.TabFormSelectedPageChangedEventHandler(this.tabFormControl1_SelectedPageChanged);
             // 
-            // barListItem_FunctionList
+            // barListItem_FunctionMenuList
             // 
-            this.barListItem_FunctionList.Caption = "功能列表";
-            this.barListItem_FunctionList.Id = 6;
-            this.barListItem_FunctionList.Name = "barListItem_FunctionList";
-            this.barListItem_FunctionList.ListItemClick += new DevExpress.XtraBars.ListItemClickEventHandler(this.barListItem_FunctionList_ListItemClick);
+            this.barListItem_FunctionMenuList.Caption = "功能菜单列表";
+            this.barListItem_FunctionMenuList.Id = 6;
+            this.barListItem_FunctionMenuList.Name = "barListItem_FunctionMenuList";
+            this.barListItem_FunctionMenuList.ListItemClick += new DevExpress.XtraBars.ListItemClickEventHandler(this.barListItem_FunctionList_ListItemClick);
             // 
             // skinDropDownButtonItem2
             // 
@@ -314,7 +314,7 @@ namespace CoffeeMilk13.UI.View
         #endregion
 
         private DevExpress.XtraBars.TabFormControl tabFormControl1;
-        private DevExpress.XtraBars.BarListItem barListItem_FunctionList;
+        private DevExpress.XtraBars.BarListItem barListItem_FunctionMenuList;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem2;
         private DevExpress.XtraBars.BarListItem barListItem_FunctionModule;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_ClearAllTabPage;

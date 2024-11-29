@@ -189,6 +189,7 @@ F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winf
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\bin\Debug\zh-CN\DevExpress.XtraNavBar.v20.1.resources.dll
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.AuthoritySettingForm.resources
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.FunctionModuleSettingForm.resources
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.XtraForm1.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\images\LoopImg\1.jpg
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\images\LoopImg\2.jpg
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\bin\Debug\images\LoopImg\3.jpg
@@ -310,6 +311,7 @@ F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.MainForm.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.MenuSettingForm.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.RoleSettingForm.resources
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.View.XtraForm1.resources
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.csproj.GenerateResource.cache
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.exe.licenses
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.UI\obj\Debug\CoffeeMilk13.UI.csproj.CoreCompileInputs.cache

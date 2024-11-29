@@ -87,6 +87,7 @@
     <Compile Include="Utils\AppAssemblyInfo.cs" />
     <Compile Include="Utils\GridControlHelper.cs" />
     <Compile Include="Utils\PopupMessage.cs" />
+    <Compile Include="Utils\TreeListHelper.cs" />
     <Compile Include="Utils\WinformUIHelper.cs" />
     <Compile Include="View\AuthoritySettingForm.cs">
       <SubType>Form</SubType>
@@ -136,6 +137,12 @@
     <Compile Include="View\RoleSettingForm.Designer.cs">
       <DependentUpon>RoleSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -170,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RoleSettingForm.resx">
       <DependentUpon>RoleSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

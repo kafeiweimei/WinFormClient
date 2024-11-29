@@ -45,36 +45,62 @@ namespace Global
         //临时菜单字典
         public static Dictionary<string, string> tmpMenuDic = new Dictionary<string, string>
         {
-            ["功能模块设置"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm",
             ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
-            ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
+            ["功能模块设置"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm",
+            ["角色设置"] = "CoffeeMilk13.UI.View.RoleSettingForm",
+            ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm",
+            ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1"
         };
+
         //临时功能模块字典
         public static Dictionary<string, Dictionary<string, string>> tmpFuncModuleDic = new Dictionary<string, Dictionary<string, string>>
         {
-            ["系统功能"] =tmpMenuDic,
-            //["系统功能"]=new Dictionary<string, string> 
-            //{ 
-            //    ["功能模块设置"]="CoffeeMilk13.UI.View.FunctionModuleSettingForm",
-            //    ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
-            //    ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
-            //},
+            ["系统功能"] = tmpMenuDic,
+
             ["业务功能2"] = new Dictionary<string, string>
             {
-                ["菜单21"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm2",
-                ["菜单22"] = "CoffeeMilk13.UI.View.MenuSettingForm2",
-                ["菜单23"] = "CoffeeMilk13.UI.View.AuthoritySettingForm2"
+                ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
+                ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
             },
             ["业务功能3"] = new Dictionary<string, string>
             {
-                ["菜单31"] = "CoffeeMilk13.UI.View.FunctionModuleSettingForm3",
-                ["菜单32"] = "CoffeeMilk13.UI.View.MenuSettingForm3",
-                ["菜单33"] = "CoffeeMilk13.UI.View.AuthoritySettingForm3"
+                ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
+                ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
+                ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
             },
 
 
         };
-        
+
+        //临时角色字典
+        public static Dictionary<string, Dictionary<string, Dictionary<string, string>>> tmpRoleDic = new Dictionary<string, Dictionary<string, Dictionary<string, string>>>()
+        {
+            ["超级管理员"] = tmpFuncModuleDic,
+            ["运维人员"]=new Dictionary<string, Dictionary<string, string>>()
+            {
+                ["业务功能2"] = new Dictionary<string, string>
+                {
+                    ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
+                    ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
+                },
+                ["业务功能3"] = new Dictionary<string, string>
+                {
+                    ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
+                    ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
+                    ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
+                }
+            },
+            ["操作工"] =new Dictionary<string, Dictionary<string, string>>()
+            {
+                ["业务功能3"] = new Dictionary<string, string>
+                {
+                    ["菜单设置"] = "CoffeeMilk13.UI.View.MenuSettingForm",
+                    ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
+                    ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm"
+                },
+            }
+
+        };
 
         #endregion
 

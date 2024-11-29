@@ -55,23 +55,23 @@ namespace CoffeeMilk13.UI.View
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeList1.Location = new System.Drawing.Point(0, 120);
             this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(404, 456);
+            this.treeList1.Size = new System.Drawing.Size(423, 456);
             this.treeList1.TabIndex = 1;
             // 
             // treeList2
             // 
             this.treeList2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.treeList2.Location = new System.Drawing.Point(562, 120);
+            this.treeList2.Location = new System.Drawing.Point(496, 120);
             this.treeList2.Name = "treeList2";
-            this.treeList2.Size = new System.Drawing.Size(563, 456);
+            this.treeList2.Size = new System.Drawing.Size(629, 456);
             this.treeList2.TabIndex = 2;
             // 
             // panelControl2
             // 
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(404, 120);
+            this.panelControl2.Location = new System.Drawing.Point(423, 120);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(158, 456);
+            this.panelControl2.Size = new System.Drawing.Size(73, 456);
             this.panelControl2.TabIndex = 3;
             // 
             // AuthoritySettingForm

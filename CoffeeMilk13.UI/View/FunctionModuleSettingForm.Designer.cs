@@ -115,6 +115,7 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton_Save.Size = new System.Drawing.Size(92, 34);
             this.simpleButton_Save.TabIndex = 12;
             this.simpleButton_Save.Text = "保存";
+            this.simpleButton_Save.Click += new System.EventHandler(this.simpleButton_Save_Click);
             // 
             // simpleButton_Delete
             // 
@@ -127,6 +128,7 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton_Delete.Size = new System.Drawing.Size(92, 34);
             this.simpleButton_Delete.TabIndex = 11;
             this.simpleButton_Delete.Text = "删除";
+            this.simpleButton_Delete.Click += new System.EventHandler(this.simpleButton_Delete_Click);
             // 
             // simpleButton_Modify
             // 
@@ -139,6 +141,7 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton_Modify.Size = new System.Drawing.Size(92, 34);
             this.simpleButton_Modify.TabIndex = 10;
             this.simpleButton_Modify.Text = "修改";
+            this.simpleButton_Modify.Click += new System.EventHandler(this.simpleButton_Modify_Click);
             // 
             // simpleButton_Add
             // 

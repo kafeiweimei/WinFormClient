@@ -15,6 +15,8 @@ namespace CoffeeMilk13.UI.View
     public partial class FunctionModuleSettingForm : DevExpress.XtraEditors.XtraForm
     {
         #region 基础参数
+        //当前选中的功能模块名称
+        private string _CurSelectedFunctionModuleName = string.Empty;
         //需要加载显示的功能模块数据表
         private DataTable _FunctionModuleDataTable = new DataTable();
         //需加载的功能模块字段列表
@@ -95,7 +97,10 @@ namespace CoffeeMilk13.UI.View
             InitPara();
             AddFieldToDataTable(ref _FunctionModuleDataTable);
             LoadFunctionModuleNameListInfo();
+            LoadAllMenuNameListOfFunctionModuleName();
 
+            //主动调用一次
+            LoadMenuNameListOfFunctionModuleName(_CurSelectedFunctionModuleName);
         }
 
         private void FunctionModuleSettingsForm_Resize(object sender, EventArgs e)
@@ -122,147 +127,18 @@ namespace CoffeeMilk13.UI.View
             treeList_MenuNameListOfFunctionModule.OptionsDragAndDrop.ExpandNodeOnDrag = false;
 
             //显示行号
-            SetTreeListLineNumbers(treeList_FuntionModuleNameList);
-            SetTreeListLineNumbers(treeList_MenuNameListOfFunctionModule);
+            TreeListHelper.SetTreeListLineNumbers(treeList_FuntionModuleNameList);
+            TreeListHelper.SetTreeListLineNumbers(treeList_MenuNameListOfFunctionModule);
 
             // 设置选中行的样式
-            SetTreeListRowSelectedEffect(treeList_FuntionModuleNameList);
+            TreeListHelper.SetTreeListRowSelectedEffect(treeList_FuntionModuleNameList);
             //SetTreeListRowSelectedEffect(treeList_MenuNameListOfFunctionModule);
 
 
             treeList_MenuNameListOfFunctionModule.OptionsView.ShowCheckBoxes = true;
-            SetTreeListCheckBoxSelectedEvent(treeList_MenuNameListOfFunctionModule);
-        }
-
-        /// <summary>
-        /// 设置TreeList显示行号
-        /// </summary>
-        /// <param name="treeList"></param>
-        private void SetTreeListLineNumbers(DevExpress.XtraTreeList.TreeList treeList)
-        {
-
-            // 显示默认的行指示器（行号）
-            treeList.OptionsView.ShowIndicator = true;
-
-            // 设置行号列的宽度
-            treeList.IndicatorWidth = 36; 
-
-            // 自定义行号显示
-            treeList.CustomDrawNodeIndicator += (s, e) =>
-            {
-                if (e.Node != null)
-                {
-                    // 显示从1开始的行号
-                    e.Info.DisplayText = (treeList.GetVisibleIndexByNode(e.Node) + 1).ToString();
-
-                    // 可选：设置行号样式
-                    //e.Appearance.Font = new Font(treeList.Font, FontStyle.Bold);
-                    e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                }
-            };
-
-
+            TreeListHelper.SetTreeListCheckBoxSelectedEvent(treeList_MenuNameListOfFunctionModule);
 
         }
-
-        /// <summary>
-        /// 设置TreeList行选中效果
-        /// </summary>
-        /// <param name="treeList"></param>
-        private void SetTreeListRowSelectedEffect(DevExpress.XtraTreeList.TreeList treeList)
-        {
-            ////焦点行字体加粗
-            //treeList.Appearance.FocusedRow.Font = new Font(treeList.Font, FontStyle.Bold);
-            //treeList.Appearance.FocusedRow.Options.UseFont = true;
-
-            //// 1. 启用焦点行显示
-            //treeList.OptionsView.FocusRectStyle = DevExpress.XtraTreeList.DrawFocusRectStyle.RowFocus;
-            //treeList.OptionsSelection.EnableAppearanceFocusedRow = true;
-            //treeList.OptionsSelection.EnableAppearanceFocusedCell = false;
-
-            //// 2. 设置选中行的样式
-            //treeList.Appearance.FocusedRow.BackColor = Color.FromArgb(0, 105, 194);  // 背景色
-            //treeList.Appearance.FocusedRow.ForeColor = Color.FromArgb(206, 112, 1);  // 文字颜色
-            //treeList.Appearance.FocusedRow.Options.UseBackColor = true;
-            //treeList.Appearance.FocusedRow.Options.UseForeColor = true;
-
-            ////// 3. 设置多选模式下的样式（如果需要）
-            ////treeList.OptionsSelection.MultiSelect = true;  // 启用多选
-            ////treeList.Appearance.SelectedRow.BackColor = Color.LightBlue;    // 多选时其他选中行的背景色
-            ////treeList.Appearance.SelectedRow.ForeColor = Color.Black;        // 多选时其他选中行的文字颜色
-            ////treeList.Appearance.SelectedRow.Options.UseBackColor = true;
-            ////treeList.Appearance.SelectedRow.Options.UseForeColor = true;
-
-            //// 4. 设置鼠标悬停效果（可选）
-            ////treeList.OptionsView.EnableAppearanceHotTracking = true;
-            //treeList.Appearance.HotTrackedRow.BackColor = Color.LightYellow;
-            //treeList.Appearance.HotTrackedRow.Options.UseBackColor = true;
-
-            // 使用CustomDrawNodeCell事件来自定义每个单元格的外观
-            treeList.CustomDrawNodeCell += (sender, e) =>
-            {
-                // 如果当前节点被勾选，改变字体颜色
-                if (e.Node.IsSelected ==true)
-                {
-                    e.Appearance.ForeColor = Color.FromArgb(0, 105, 194);  // 设置为蓝色或其他颜色
-                    e.Appearance.Options.UseForeColor = true;
-
-                    // 获取当前节点的字体（如果没有设置则使用TreeList的默认字体）
-                    Font currentFont = e.Appearance.Font ?? treeList.Appearance.Row.Font ?? treeList.Font;
-                    e.Appearance.Font = new Font(
-                       currentFont.FontFamily,    // 保持原字体
-                       currentFont.Size,          // 保持原字体大小
-                       FontStyle.Bold             // 设置为粗体
-                        );
-                    e.Appearance.Options.UseFont = true;
-
-                }
-            };
-
-        }
-
-        /// <summary>
-        /// 设置TreeList的复选框选中事件
-        /// </summary>
-        /// <param name="treeList">treeList控件</param>
-        private void SetTreeListCheckBoxSelectedEvent(DevExpress.XtraTreeList.TreeList treeList)
-        {
-            // 启用复选框
-            treeList.OptionsView.ShowCheckBoxes = true;
-            ////启用行高自适应
-            //treeList.OptionsBehavior.AutoNodeHeight = true;
-            //treeList.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            //treeList.Appearance.Row.Options.UseTextOptions = true;
-
-            // 使用CustomDrawNodeCell事件来自定义每个单元格的外观
-            treeList.CustomDrawNodeCell += (sender, e) =>
-            {
-                // 如果当前节点被勾选，改变字体颜色
-                if (e.Node.CheckState == CheckState.Checked)
-                {
-                    e.Appearance.ForeColor = Color.FromArgb(0, 105, 194);  // 设置为蓝色或其他颜色
-                    e.Appearance.Options.UseForeColor = true;
-
-                    // 获取当前节点的字体（如果没有设置则使用TreeList的默认字体）
-                    Font currentFont = e.Appearance.Font ?? treeList.Appearance.Row.Font ?? treeList.Font;
-                    e.Appearance.Font = new Font(
-                       currentFont.FontFamily,    // 保持原字体
-                       currentFont.Size,          // 保持原字体大小
-                       FontStyle.Bold             // 设置为粗体
-                        );
-                    e.Appearance.Options.UseFont = true;
-                    
-                }
-            };
-
-            // 处理复选框选中事件，用于刷新显示
-            treeList.AfterCheckNode += (sender, e) =>
-            {
-                // 刷新TreeList以更新显示
-                treeList.Refresh();
-            };
-        }
-
 
 
         /// <summary>
@@ -286,23 +162,58 @@ namespace CoffeeMilk13.UI.View
             treeList_FuntionModuleNameList.DataSource = _FunctionModuleDataTable;
             treeList_FuntionModuleNameList.RefreshDataSource();
             treeList_FuntionModuleNameList.Refresh();
+
         }
 
-        //加载功能模块名称对应的菜单列表
-        private void LoadMenuNameListOfFunctionModuleName(string functionModuleName)
+        /// <summary>
+        /// 加载功能模块名称对应的所有菜单列表
+        /// </summary>
+        private void LoadAllMenuNameListOfFunctionModuleName()
         {
-            if (string.IsNullOrWhiteSpace(functionModuleName)) return;
-           
             _MenuNameListOfFunctionModuleDataTable?.Clear();
-
-            if (!Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName) ||
-               Global.Global_Parameter.tmpFuncModuleDic[functionModuleName]==null) return;
            
-            DataTableHelper.AddOneColumnDatasToDataTable2(Global.Global_Parameter.tmpFuncModuleDic[functionModuleName].Keys.ToList<string>(),
+            DataTableHelper.AddOneColumnDatasToDataTable2(Global.Global_Parameter.tmpMenuDic.Keys.ToList<string>(),
                 _MenuNameFieldListOfFunctionModule[0], ref _MenuNameListOfFunctionModuleDataTable);
 
             treeList_MenuNameListOfFunctionModule.DataSource = _MenuNameListOfFunctionModuleDataTable;
             treeList_MenuNameListOfFunctionModule.Refresh();
+        }
+
+        /// <summary>
+        /// 加载功能模块名称对应的菜单列表
+        /// </summary>
+        /// <param name="functionModuleName">功能模块名称</param>
+        private void LoadMenuNameListOfFunctionModuleName(string functionModuleName)
+        {
+            if (string.IsNullOrWhiteSpace(functionModuleName)) return;
+
+            _MenuNameListOfFunctionModuleDataTable?.Clear();
+            LoadAllMenuNameListOfFunctionModuleName();
+
+            if (!Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName) ||
+               Global.Global_Parameter.tmpFuncModuleDic[functionModuleName] == null)
+            {
+                for (int i = 0; i < treeList_MenuNameListOfFunctionModule.Nodes.Count; i++)
+                {
+                    treeList_MenuNameListOfFunctionModule.Nodes[i].CheckState = CheckState.Unchecked;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < Global.Global_Parameter.tmpFuncModuleDic[functionModuleName].Count; i++)
+                {
+                    string curFunctionModuleMenuName = Global.Global_Parameter.tmpFuncModuleDic[functionModuleName].ElementAt(i).Key;
+                    for (int j = 0; j < treeList_MenuNameListOfFunctionModule.Nodes.Count; j++)
+                    {
+                        string curMenuName = treeList_MenuNameListOfFunctionModule.Nodes[j].GetDisplayText(0);
+                        if (curFunctionModuleMenuName.Equals(curMenuName))
+                        {
+                            treeList_MenuNameListOfFunctionModule.Nodes[j].CheckState = CheckState.Checked;
+                        }
+                    }
+                }
+            }
+           
         }
 
 
@@ -310,7 +221,7 @@ namespace CoffeeMilk13.UI.View
 
         private void simpleButton_Add_Click(object sender, EventArgs e)
         {
-            string functionModuleName = textEdit_FunctionModuleName.Text;
+            string functionModuleName = textEdit_FunctionModuleName.Text.Trim();
             if (!string.IsNullOrWhiteSpace(functionModuleName))
             {
                 //将功能菜单名称添加到字典中
@@ -323,10 +234,91 @@ namespace CoffeeMilk13.UI.View
                 ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleDic, functionModuleName,null);
                 LoadFunctionModuleNameListInfo();
 
+            }
+        }
+
+        private void simpleButton_Modify_Click(object sender, EventArgs e)
+        {
+            string functionModuleName = textEdit_FunctionModuleName.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(functionModuleName))
+            {
+                //将功能菜单名称到字典中修改
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName))
+                {
+                    PopupMessage.ShowWarning($"已存在【{functionModuleName}】模块，请重新输入一个唯一的模块名称");
+                    return;
+                }
+
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(_CurSelectedFunctionModuleName))
+                {
+                    var oldValue = Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName];
+                    Global.Global_Parameter.tmpFuncModuleDic.Remove(_CurSelectedFunctionModuleName);
+
+                    ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleDic, functionModuleName, oldValue);
+                    LoadFunctionModuleNameListInfo();
+                }
 
 
             }
         }
+
+        private void simpleButton_Delete_Click(object sender, EventArgs e)
+        {
+            string functionModuleName = textEdit_FunctionModuleName.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(functionModuleName))
+            {
+                //将功能菜单名称到字典中删除
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName))
+                {
+                    bool result = PopupMessage.ShowAskQuestion($"确定要删除【{functionModuleName}】模块吗？");
+                    if (result)
+                    {
+                        Global.Global_Parameter.tmpFuncModuleDic.Remove(functionModuleName);
+                        LoadFunctionModuleNameListInfo();
+                    }
+                }
+                else
+                {
+                    PopupMessage.ShowWarning($"不存在【{functionModuleName}】模块，请重新输入一个存在的模块名称");
+                }
+
+            }
+
+        }
+
+        private void simpleButton_Save_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(_CurSelectedFunctionModuleName)||
+                !Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(_CurSelectedFunctionModuleName)) return;
+
+            //获取当前选中的功能模块及对应该功能模块勾选的菜单
+            for (int i = 0; i < treeList_MenuNameListOfFunctionModule.Nodes.Count; i++)
+            {
+                var node = treeList_MenuNameListOfFunctionModule.Nodes[i];
+                if (node.Checked)
+                {
+                    string curSelectedMenuName = node.GetDisplayText(0);
+                    if (Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName]==null || 
+                        !Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName].ContainsKey(curSelectedMenuName))
+                    {
+                        if (!Global.Global_Parameter.tmpMenuDic.ContainsKey(curSelectedMenuName))
+                        {
+                            continue;
+                        }
+                        string menuNameSpace = Global.Global_Parameter.tmpMenuDic[curSelectedMenuName];
+                        if (Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName]==null)
+                        {
+                            Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName] = new Dictionary<string, string>();
+                        }
+                        ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName], curSelectedMenuName, menuNameSpace);
+                    }
+                }
+                
+               
+            }
+
+        }
+
 
         private void treeList_FuntionModuleNameList_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
@@ -340,8 +332,13 @@ namespace CoffeeMilk13.UI.View
             if (e.Node != null)
             {
                 //PopupMessage.ShowInfo($"节点ID：{e.Node.Id},节点名称：{e.Node.GetDisplayText(0)}");
+                _CurSelectedFunctionModuleName = e.Node.GetDisplayText(0);
                 LoadMenuNameListOfFunctionModuleName(e.Node.GetDisplayText(0));
+                textEdit_FunctionModuleName.Text = _CurSelectedFunctionModuleName;
             }
         }
+
+
+
     }
 }
