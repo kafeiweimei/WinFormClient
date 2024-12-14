@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,7 +87,9 @@ namespace CoffeeMilk13.UI.View
         {
             FormParaSetting();
 
-            CreateMutiFuncModuleBtn();
+            LoadFuncModuleOfSettings();
+
+            ShowAppInfo();
         }
 
         /// <summary>
@@ -108,34 +111,92 @@ namespace CoffeeMilk13.UI.View
 
         }
 
-        //创建多个功能模块按钮
+        /// <summary>
+        /// 创建多个功能模块按钮【手动添加测试】
+        /// </summary>
         private void CreateMutiFuncModuleBtn()
         {
             //先清空所有示例控件
             flowLayoutPanel1.Controls.Clear();
 
+            //手动添加
             for (int i = 0; i < 36; i++)
             {
                 string btnName = $"代码添加功能模块{i}";
                 string btnText = $"代码添加功能模块{i}";
 
-                Bitmap bitmap = Properties.Resources.系统服务;
+                Image image = Properties.Resources.系统服务;
                 if (i%2==0)
                 {
-                   bitmap = Properties.Resources.功能菜单;
+                    image = Properties.Resources.功能菜单;
                 }
                 
-                CreateFuncModuleBtn(btnName,btnText,bitmap);
+                CreateFuncModuleBtn(btnName,btnText, image);
             }
         }
 
-        //创建功能模块按钮
-        private void CreateFuncModuleBtn(string btnName,string btnText,Bitmap bitmap)
+        /// <summary>
+        /// 加载配置的功能模块
+        /// </summary>
+        private void LoadFuncModuleOfSettings()
+        {
+
+            if (Global.Global_Parameter.tmpFuncModuleDic != null && Global.Global_Parameter.tmpFuncModuleDic?.Count > 0)
+            {
+                //先清空所有示例控件
+                flowLayoutPanel1.Controls.Clear();
+
+                //加载配置好的功能模块
+                for (int i = 0; i < Global.Global_Parameter.tmpFuncModuleDic.Count; i++)
+                {
+                    string btnName = Global.Global_Parameter.tmpFuncModuleDic.ElementAt(i).Key;
+                    string btnText = Global.Global_Parameter.tmpFuncModuleDic.ElementAt(i).Key;
+                    Image image = Properties.Resources.bubble3d_32x32;
+                    if (Global.Global_Parameter.tmpFuncModuleAndImgDic != null && Global.Global_Parameter.tmpFuncModuleAndImgDic?.Count > 0 &&
+                        Global.Global_Parameter.tmpFuncModuleAndImgDic.ContainsKey(btnName))
+                    {
+                        string imageName = Global.Global_Parameter.tmpFuncModuleAndImgDic[btnName];
+                        image = GetImageObjByImageName(imageName);
+                    }
+                   
+                    CreateFuncModuleBtn(btnName, btnText, image);
+                }
+            }
+            else
+            {
+                //直接加载界面设计的控件
+            }
+
+        }
+
+        /// <summary>
+        /// 根据图片名称获取到图片对象
+        /// </summary>
+        /// <param name="imageName">图片名称</param>
+        /// <returns></returns>
+        private Image GetImageObjByImageName(string imageName)
+        {
+            if (string.IsNullOrEmpty(imageName)) return null;
+            string resourcesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"images\FuncModuleImg");
+            string imgPathAndName = $"{resourcesPath}\\{imageName}.png";
+            Image imageObj = Image.FromFile(imgPathAndName);
+
+            return imageObj;
+            
+        }
+
+        /// <summary>
+        /// 创建功能模块按钮
+        /// </summary>
+        /// <param name="btnName">功能模块名称【必须唯一】</param>
+        /// <param name="btnText">功能模块显示名称</param>
+        /// <param name="image">功能模块显示图片</param>
+        private void CreateFuncModuleBtn(string btnName,string btnText,Image image)
         {
             SimpleButton simpleButton = new SimpleButton();
             simpleButton.Name = btnName;
             simpleButton.Text = btnText;
-            simpleButton.ImageOptions.Image = bitmap;
+            simpleButton.ImageOptions.Image = image;
             simpleButton.ImageOptions.ImageToTextAlignment = ImageAlignToText.TopCenter;
             int imgSize = 256;
             int fontSize = 40;
@@ -146,10 +207,31 @@ namespace CoffeeMilk13.UI.View
 
             simpleButton.Click += (object sender, EventArgs e) =>
             {
+                Global.Global_Parameter.curSelectedFuncModuleName = simpleButton.Text;
                 Utils.WinformUIHelper.OpenForm(ref mainForm);
                 this.Hide();
             };
 
+        }
+
+        /// <summary>
+        /// 显示客户端的信息
+        /// </summary>
+        private void ShowAppInfo()
+        {
+            string info = $"版本号：{Utils.AppAssemblyInfo.Version} 版权：{Utils.AppAssemblyInfo.CompanyName }  {Utils.AppAssemblyInfo.Copyright}";
+
+            barStaticItem1.Caption = info;
+
+            barStaticItem1.ItemClick += OpenUrlLink;
+
+
+        }
+
+        private void OpenUrlLink(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string url = $"http://{Utils.AppAssemblyInfo.CompanyName}";
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(url) { UseShellExecute = true });
         }
 
         private void FunctionModuleForm_Resize(object sender, EventArgs e)
@@ -163,7 +245,18 @@ namespace CoffeeMilk13.UI.View
             bool isExit = PopupMessage.ShowAskQuestion("确定关闭系统？");
             if (isExit)
             {
-                Application.Exit();
+                try
+                {
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    
+                }
             }
 
         }

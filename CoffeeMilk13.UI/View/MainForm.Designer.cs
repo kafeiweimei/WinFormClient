@@ -101,6 +101,7 @@ namespace CoffeeMilk13.UI.View
             this.barListItem_FunctionModule.Id = 10;
             this.barListItem_FunctionModule.Name = "barListItem_FunctionModule";
             this.barListItem_FunctionModule.ListItemClick += new DevExpress.XtraBars.ListItemClickEventHandler(this.barListItem_FunctionModule_ListItemClick);
+            this.barListItem_FunctionModule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barListItem_FunctionModule_ItemClick);
             this.barListItem_FunctionModule.ItemDoubleClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barListItem_FunctionModule_ItemDoubleClick);
             // 
             // barButtonItem_ClearAllTabPage
@@ -295,6 +296,7 @@ namespace CoffeeMilk13.UI.View
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Image = global::CoffeeMilk13.UI.Properties.Resources.bubble3d_32x32;
             this.Name = "MainForm";
             this.TabFormControl = this.tabFormControl1;
             this.Text = "牛奶咖啡13系统";

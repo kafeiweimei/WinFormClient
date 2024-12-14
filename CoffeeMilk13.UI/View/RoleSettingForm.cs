@@ -148,6 +148,8 @@ namespace CoffeeMilk13.UI.View
             TreeListHelper.SetTreeListCheckBoxSelectedEvent(treeList_FunctionModuleListOfRole);
             TreeListHelper.SetTreeListCheckBoxSelectedEvent(treeList_MenuListOfFunctionModule);
 
+            TreeListHelper.CancelTreeListCheckBoxSelectedEvent(treeList_MenuListOfFunctionModule);
+
         }
 
         /// <summary>
@@ -291,20 +293,6 @@ namespace CoffeeMilk13.UI.View
            
         }
 
-        private void simpleButton_Modify_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton_Delete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void simpleButton_Save_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void simpleButton_Add_Click(object sender, EventArgs e)
         {
@@ -324,6 +312,133 @@ namespace CoffeeMilk13.UI.View
             }
         }
 
+        private void simpleButton_Modify_Click(object sender, EventArgs e)
+        {
+            string roleName = textEdit_RoleName.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(roleName))
+            {
+                if (Global.Global_Parameter.tmpRoleDic.ContainsKey(roleName))
+                {
+                    PopupMessage.ShowWarning($"已存在【{roleName}】角色，请重新输入一个唯一的角色名称");
+                    return;
+                }
+
+                if (Global.Global_Parameter.tmpRoleDic.ContainsKey(_CurSelectedRoleName))
+                {
+                    var oldValue = Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName];
+                    Global.Global_Parameter.tmpRoleDic.Remove(_CurSelectedRoleName);
+                    ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpRoleDic, roleName, oldValue);
+                    LoadAllRoleNameListInfo();
+                }
+            }
+        }
+
+        private void simpleButton_Delete_Click(object sender, EventArgs e)
+        {
+            string roleName = textEdit_RoleName.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(roleName))
+            {
+                if (Global.Global_Parameter.tmpRoleDic.ContainsKey(roleName))
+                {
+                    bool result = PopupMessage.ShowAskQuestion($"确定要删除【{roleName}】角色吗？");
+                    if (result)
+                    {
+                        Global.Global_Parameter.tmpRoleDic.Remove(roleName);
+                        LoadAllRoleNameListInfo();
+                    }
+                }
+                else
+                {
+                    PopupMessage.ShowWarning($"不存在【{roleName}】角色，请重新输入一个存在的角色名称");
+                }
+            }
+        }
+
+        private void simpleButton_Save_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(_CurSelectedRoleName) ||
+             !Global.Global_Parameter.tmpRoleDic.ContainsKey(_CurSelectedRoleName)) return;
+
+            //获取当前选中的角色及对应该角色勾选的功模块
+            for (int i = 0; i < treeList_FunctionModuleListOfRole.Nodes.Count; i++)
+            {
+                var node = treeList_FunctionModuleListOfRole.Nodes[i];
+                if (node.Checked)
+                {
+                    string curSelectedFunctionModuleName = node.GetDisplayText(0);
+                    if (Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName] == null ||
+                       !Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName].ContainsKey(curSelectedFunctionModuleName))
+                    {
+                        if (!Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(curSelectedFunctionModuleName))
+                        {
+                            continue;
+                        }
+                        //获取到功能模块勾选的菜单名称列表
+                        var curMenuListOfSelectedFunctionModuleName = Global.Global_Parameter.tmpFuncModuleDic[curSelectedFunctionModuleName];
+                        if (Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName] == null)
+                        {
+                            Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName] = new Dictionary<string, Dictionary<string, string>>();
+                        }
+
+                        ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName], curSelectedFunctionModuleName, curMenuListOfSelectedFunctionModuleName);
+
+                        ////获取到当前选中的角色、功能模块及对应功能模块勾选的菜单
+                        //for (int j = 0; j < treeList_MenuListOfFunctionModule.Nodes.Count; j++)
+                        //{
+                        //    var menuNode = treeList_MenuListOfFunctionModule.Nodes[j];
+                        //    if (menuNode.Checked)
+                        //    {
+                        //        string curSelectedMenuName = menuNode.GetDisplayText(0);
+                        //        if (Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][curSelectedFunctionModuleName] == null ||
+                        //            !Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][curSelectedFunctionModuleName].ContainsKey(curSelectedMenuName))
+                        //        {
+                        //            if (!Global.Global_Parameter.tmpMenuDic.ContainsKey(curSelectedMenuName))
+                        //            {
+                        //                continue;
+                        //            }
+                        //            string menuNameSpace = Global.Global_Parameter.tmpMenuDic[curSelectedMenuName];
+                        //            if (Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][curSelectedFunctionModuleName] == null)
+                        //            {
+                        //                Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][curSelectedFunctionModuleName] = new Dictionary<string, string>();
+                        //            }
+                        //            ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][curSelectedFunctionModuleName], curSelectedMenuName, menuNameSpace);
+                        //        }
+
+                        //    }
+                        //}
+                    }
+                    else
+                    {
+                        ////获取到当前选中的角色、功能模块及对应功能模块勾选的菜单
+                        //for (int j = 0; j < treeList_MenuListOfFunctionModule.Nodes.Count; j++)
+                        //{
+                        //    var menuNode = treeList_MenuListOfFunctionModule.Nodes[j];
+                        //    if (menuNode.Checked)
+                        //    {
+                        //        string curSelectedMenuName = menuNode.GetDisplayText(0);
+                        //        if (Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][_CurSelectedFunctionModuleName]==null||
+                        //            !Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][_CurSelectedFunctionModuleName].ContainsKey(curSelectedMenuName))
+                        //        {
+                        //            if (!Global.Global_Parameter.tmpMenuDic.ContainsKey(curSelectedMenuName))
+                        //            {
+                        //                continue;
+                        //            }
+                        //            string menuNameSpace = Global.Global_Parameter.tmpMenuDic[curSelectedMenuName];
+                        //            if (Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][_CurSelectedFunctionModuleName]==null)
+                        //            {
+                        //                Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][_CurSelectedFunctionModuleName] = new Dictionary<string, string>();
+                        //            }
+                        //            ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpRoleDic[_CurSelectedRoleName][_CurSelectedFunctionModuleName], curSelectedMenuName, menuNameSpace);
+                        //        }
+
+                        //    }
+                        //}
+                    }
+                }
+            }
+        }
+
+
         private void treeList_RoleNameList_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
             //上一个选择的节点
@@ -339,6 +454,7 @@ namespace CoffeeMilk13.UI.View
                 //PopupMessage.ShowInfo($"节点ID：{e.Node.Id},节点名称：{e.Node.GetDisplayText(0)}");
 
                 _CurSelectedRoleName = e.Node.GetDisplayText(0);
+                textEdit_RoleName.Text = _CurSelectedRoleName;
                 LoadFunctionModuleListOfRole(e.Node.GetDisplayText(0));
                 
 

@@ -67,7 +67,14 @@ namespace CoffeeMilk13.UI.View
             labelControl_Company.Text = copyrightStyle;
 
             string tmp = Utils.AppAssemblyInfo.Description;
+            labelControl_Company.MouseClick += OpenLink;
 
+        }
+
+        private void OpenLink(object sender, MouseEventArgs e)
+        {
+            string url =$"http://{Utils.AppAssemblyInfo.CompanyName}" ;
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(url) { UseShellExecute = true });
         }
 
         private void simpleButton_Login_Click(object sender, EventArgs e)

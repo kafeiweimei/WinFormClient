@@ -1,5 +1,5 @@
 ﻿/***
-*	Title："Winform" 项目
+*	Title："WinFormClient" 项目
 *		主题：TreeList帮助类
 *	Description：
 *		功能：
@@ -124,6 +124,7 @@ namespace CoffeeMilk13.UI.Utils
             
             // 启用复选框
             treeList.OptionsView.ShowCheckBoxes = true;
+            
             ////启用行高自适应
             //treeList.OptionsBehavior.AutoNodeHeight = true;
             //treeList.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -155,6 +156,20 @@ namespace CoffeeMilk13.UI.Utils
             {
                 // 刷新TreeList以更新显示
                 treeList.Refresh();
+            };
+        }
+
+        /// <summary>
+        /// 取消TreeList的复选框选择效果（选中和不选中都失效）
+        /// </summary>
+        /// <param name="treeList">treeList控件</param>
+        public static void CancelTreeListCheckBoxSelectedEvent(DevExpress.XtraTreeList.TreeList treeList)
+        {
+            if (treeList == null) return;
+
+            treeList.BeforeCheckNode += (sender, e) =>
+            {
+                e.CanCheck = false;
             };
         }
 

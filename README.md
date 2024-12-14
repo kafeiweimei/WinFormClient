@@ -12,3 +12,9 @@
 3、项目框架为：.NET Framework 4.5.2
 ~~~
 
+## 二、基础框架内存版演示
+
+### 2.1、WinFormClient_V0.1数据内存版_20241214
+
+<video src=".\Documents\videos\WinFormClient_V0.1数据内存版_20241214.mp4"></video>
+

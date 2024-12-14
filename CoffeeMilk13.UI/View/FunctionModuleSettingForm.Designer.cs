@@ -41,16 +41,21 @@ namespace CoffeeMilk13.UI.View
             this.treeList_FuntionModuleNameList = new DevExpress.XtraTreeList.TreeList();
             this.treeList_MenuNameListOfFunctionModule = new DevExpress.XtraTreeList.TreeList();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl_FunctionModuleImg = new DevExpress.XtraEditors.LabelControl();
+            this.imageListBoxControl1 = new DevExpress.XtraEditors.ImageListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_FunctionModuleName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList_FuntionModuleNameList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList_MenuNameListOfFunctionModule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.imageListBoxControl1);
+            this.panelControl1.Controls.Add(this.labelControl_FunctionModuleImg);
             this.panelControl1.Controls.Add(this.labelControl_MenuNameListOfFunctionModule);
             this.panelControl1.Controls.Add(this.labelControl_FunctionModuleNameList);
             this.panelControl1.Controls.Add(this.labelControl_FunctionModuleName);
@@ -101,7 +106,7 @@ namespace CoffeeMilk13.UI.View
             this.textEdit_FunctionModuleName.Name = "textEdit_FunctionModuleName";
             this.textEdit_FunctionModuleName.Properties.Appearance.Font = new System.Drawing.Font("华文楷体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textEdit_FunctionModuleName.Properties.Appearance.Options.UseFont = true;
-            this.textEdit_FunctionModuleName.Size = new System.Drawing.Size(484, 24);
+            this.textEdit_FunctionModuleName.Size = new System.Drawing.Size(359, 24);
             this.textEdit_FunctionModuleName.TabIndex = 13;
             // 
             // simpleButton_Save
@@ -182,6 +187,24 @@ namespace CoffeeMilk13.UI.View
             this.panelControl2.Size = new System.Drawing.Size(125, 431);
             this.panelControl2.TabIndex = 3;
             // 
+            // labelControl_FunctionModuleImg
+            // 
+            this.labelControl_FunctionModuleImg.Appearance.Font = new System.Drawing.Font("楷体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelControl_FunctionModuleImg.Appearance.Options.UseFont = true;
+            this.labelControl_FunctionModuleImg.Location = new System.Drawing.Point(375, 12);
+            this.labelControl_FunctionModuleImg.Name = "labelControl_FunctionModuleImg";
+            this.labelControl_FunctionModuleImg.Size = new System.Drawing.Size(126, 19);
+            this.labelControl_FunctionModuleImg.TabIndex = 17;
+            this.labelControl_FunctionModuleImg.Text = "功能模块图标";
+            // 
+            // imageListBoxControl1
+            // 
+            this.imageListBoxControl1.Location = new System.Drawing.Point(381, 32);
+            this.imageListBoxControl1.Name = "imageListBoxControl1";
+            this.imageListBoxControl1.Size = new System.Drawing.Size(120, 74);
+            this.imageListBoxControl1.TabIndex = 18;
+            this.imageListBoxControl1.SelectedIndexChanged += new System.EventHandler(this.imageListBoxControl1_SelectedIndexChanged);
+            // 
             // FunctionModuleSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -202,6 +225,7 @@ namespace CoffeeMilk13.UI.View
             ((System.ComponentModel.ISupportInitialize)(this.treeList_FuntionModuleNameList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList_MenuNameListOfFunctionModule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageListBoxControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,5 +244,7 @@ namespace CoffeeMilk13.UI.View
         private DevExpress.XtraEditors.TextEdit textEdit_FunctionModuleName;
         private DevExpress.XtraEditors.LabelControl labelControl_FunctionModuleNameList;
         private DevExpress.XtraEditors.LabelControl labelControl_MenuNameListOfFunctionModule;
+        private DevExpress.XtraEditors.LabelControl labelControl_FunctionModuleImg;
+        private DevExpress.XtraEditors.ImageListBoxControl imageListBoxControl1;
     }
 }

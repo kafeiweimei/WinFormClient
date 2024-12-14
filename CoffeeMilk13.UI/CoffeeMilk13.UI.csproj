@@ -79,6 +79,7 @@
     <Compile Include="Model\MenuModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\BarListItemHelper.cs" />
     <Compile Include="Utils\ContainerHelper.cs" />
     <Compile Include="Utils\DataTableHelper.cs" />
     <Compile Include="Utils\DateTimeHelper.cs" />
@@ -205,6 +206,24 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\FuncModuleImg\传输数据.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\FuncModuleImg\功能菜单.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\FuncModuleImg\数据分析.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\FuncModuleImg\数据节点.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\FuncModuleImg\系统服务.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\FuncModuleImg\调整数据.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\icon\logo.ico" />
     <Content Include="images\LoopImg\1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -232,6 +251,7 @@
     <None Include="Resources\deletelist_16x16.png" />
     <None Include="Resources\deletelist_32x32.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -41,6 +41,12 @@ namespace Global
 
         #endregion
 
+        #region     界面参数
+        //当前选中的功能模块名称
+        public static string curSelectedFuncModuleName = string.Empty;
+
+        #endregion
+
         #region   临时字典
         //临时菜单字典
         public static Dictionary<string, string> tmpMenuDic = new Dictionary<string, string>
@@ -70,6 +76,14 @@ namespace Global
             },
 
 
+        };
+
+        //临时功能模块及其对应图片字典
+        public static Dictionary<string, string> tmpFuncModuleAndImgDic = new Dictionary<string, string>()
+        {
+            ["系统功能"]= "调整数据",
+            ["业务功能2"]= "数据节点",
+            ["业务功能3"]= "传输数据"
         };
 
         //临时角色字典

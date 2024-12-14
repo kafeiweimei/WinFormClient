@@ -1,10 +1,12 @@
 ﻿using CoffeeMilk13.UI.Utils;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,9 @@ namespace CoffeeMilk13.UI.View
         private DataTable _FunctionModuleDataTable = new DataTable();
         //需加载的功能模块字段列表
         private List<string> _FunctionModuleFieldList = new List<string>() { "功能模块名称列表" };
+
+        //当前选中的功能模块图片名称
+        private string _CurSelectedFuncModuleImgName = string.Empty;
 
         //需要加载显示的功能模块对应的菜单名称数据表
         private DataTable _MenuNameListOfFunctionModuleDataTable = new DataTable();
@@ -95,6 +100,7 @@ namespace CoffeeMilk13.UI.View
         private void FunctionModuleSettingsForm_Load(object sender, EventArgs e)
         {
             InitPara();
+            LoadFunctionModuleImages();
             AddFieldToDataTable(ref _FunctionModuleDataTable);
             LoadFunctionModuleNameListInfo();
             LoadAllMenuNameListOfFunctionModuleName();
@@ -140,6 +146,57 @@ namespace CoffeeMilk13.UI.View
 
         }
 
+        /// <summary>
+        /// 加载功能模块的图片内容
+        /// </summary>
+        private void LoadFunctionModuleImages()
+        {
+            // 创建图像列表
+            ImageList imageList = new ImageList();
+            int imgLength = 32;
+            int imgWidth = 32;
+            imageList.ImageSize = new Size(imgLength, imgWidth); // 设置图像大小
+            string resourcesPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"images\FuncModuleImg");
+
+            // 检查资源文件夹是否存在
+            if (Directory.Exists(resourcesPath))
+            {
+                // 获取所有图像文件
+                string[] imageFiles = Directory.GetFiles(resourcesPath, "*.png"); // 只加载 PNG 文件，您可以根据需要更改扩展名
+
+                foreach (string imagePath in imageFiles)
+                {
+                    // 获取文件名（不带路径和扩展名）
+                    string fileName = Path.GetFileNameWithoutExtension(imagePath);
+                    // 添加图像到图像列表
+                    using (Image originalImage = Image.FromFile(imagePath))
+                    {
+                        // 创建放大的图像
+                        Image resizedImage = new Bitmap(originalImage, new Size(imgLength, imgWidth)); // 设置图片像素
+                        imageList.Images.Add(fileName, resizedImage);
+                    }
+                    // 添加项到 ImageListBoxControl
+                    imageListBoxControl1.Items.Add(new ImageListBoxItem(fileName, fileName));
+                }
+
+                // 设置 ImageListBoxControl 的图像列表
+                imageListBoxControl1.ImageList = imageList;
+
+                // 确保每个项都能显示图像
+                foreach (var item in imageListBoxControl1.Items)
+                {
+                    var imageItem = item as ImageListBoxItem;
+                    if (imageItem != null)
+                    {
+                        imageItem.ImageIndex = imageList.Images.IndexOfKey(imageItem.Value.ToString());
+                    }
+                }
+            }
+            else
+            {
+                PopupMessage.ShowError("功能模块的图标文件夹不存在");
+            }
+        }
 
         /// <summary>
         /// 给功能模块数据表添加字段名称
@@ -216,22 +273,57 @@ namespace CoffeeMilk13.UI.View
            
         }
 
+        /// <summary>
+        /// 根据配置内容让让imageListBoxControl组件的图片被选中
+        /// </summary>
+        private void SelectedImageListBoxControlItemBySetting()
+        {
+            if (Global.Global_Parameter.tmpFuncModuleAndImgDic!=null && Global.Global_Parameter.tmpFuncModuleAndImgDic?.Count>0 &&
+                !string.IsNullOrEmpty(_CurSelectedFunctionModuleName))
+            {
+                string funcModuleNameImg = Global.Global_Parameter.tmpFuncModuleAndImgDic[_CurSelectedFunctionModuleName];
+                SelectedImageListBoxControlItemByName(funcModuleNameImg);
+            }
+        }
+
+        /// <summary>
+        /// 根据图片名称让imageListBoxControl组件的图片被选中
+        /// </summary>
+        /// <param name="imageName">图片名称</param>
+        private void SelectedImageListBoxControlItemByName(string imageName)
+        {
+            // 遍历所有项，查找匹配的项并选中
+            foreach (var item in imageListBoxControl1.Items)
+            {
+                var imageItem = item as ImageListBoxItem;
+                if (imageItem != null && imageItem.Value.ToString() == imageName)
+                {
+                    imageListBoxControl1.SelectedItem = imageItem; // 选中该项
+                    break; // 找到后退出循环
+                }
+            }
+        }
 
         #endregion
 
         private void simpleButton_Add_Click(object sender, EventArgs e)
         {
             string functionModuleName = textEdit_FunctionModuleName.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(functionModuleName))
+            string funcModuleNameImg = _CurSelectedFuncModuleImgName;
+            if (!string.IsNullOrWhiteSpace(functionModuleName) && !string.IsNullOrEmpty(funcModuleNameImg))
             {
                 //将功能菜单名称添加到字典中
-                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName))
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName) ||
+                    Global.Global_Parameter.tmpFuncModuleAndImgDic.ContainsKey(functionModuleName))
                 {
                     PopupMessage.ShowWarning($"已存在【{functionModuleName}】模块，请重新输入一个唯一的模块名称");
                     return;
                 }
 
                 ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleDic, functionModuleName,null);
+                //将功能模块的图片添加到字典中
+                ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleAndImgDic, functionModuleName, funcModuleNameImg);
+
                 LoadFunctionModuleNameListInfo();
 
             }
@@ -243,18 +335,24 @@ namespace CoffeeMilk13.UI.View
             if (!string.IsNullOrWhiteSpace(functionModuleName))
             {
                 //将功能菜单名称到字典中修改
-                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName))
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName)||
+                    Global.Global_Parameter.tmpFuncModuleAndImgDic.ContainsKey(functionModuleName))
                 {
                     PopupMessage.ShowWarning($"已存在【{functionModuleName}】模块，请重新输入一个唯一的模块名称");
                     return;
                 }
 
-                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(_CurSelectedFunctionModuleName))
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(_CurSelectedFunctionModuleName) &&
+                    Global.Global_Parameter.tmpFuncModuleAndImgDic.ContainsKey(_CurSelectedFunctionModuleName))
                 {
                     var oldValue = Global.Global_Parameter.tmpFuncModuleDic[_CurSelectedFunctionModuleName];
                     Global.Global_Parameter.tmpFuncModuleDic.Remove(_CurSelectedFunctionModuleName);
 
+                    string funcModuleNameImg = _CurSelectedFuncModuleImgName;
+                    Global.Global_Parameter.tmpFuncModuleAndImgDic.Remove(_CurSelectedFunctionModuleName);
+
                     ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleDic, functionModuleName, oldValue);
+                    ContainerHelper.AddOnlyInfoToDic(Global.Global_Parameter.tmpFuncModuleAndImgDic, functionModuleName, funcModuleNameImg);
                     LoadFunctionModuleNameListInfo();
                 }
 
@@ -268,12 +366,14 @@ namespace CoffeeMilk13.UI.View
             if (!string.IsNullOrWhiteSpace(functionModuleName))
             {
                 //将功能菜单名称到字典中删除
-                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName))
+                if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(functionModuleName)&&
+                    Global.Global_Parameter.tmpFuncModuleAndImgDic.ContainsKey(functionModuleName))
                 {
                     bool result = PopupMessage.ShowAskQuestion($"确定要删除【{functionModuleName}】模块吗？");
                     if (result)
                     {
                         Global.Global_Parameter.tmpFuncModuleDic.Remove(functionModuleName);
+                        Global.Global_Parameter.tmpFuncModuleAndImgDic.Remove(functionModuleName);
                         LoadFunctionModuleNameListInfo();
                     }
                 }
@@ -335,10 +435,34 @@ namespace CoffeeMilk13.UI.View
                 _CurSelectedFunctionModuleName = e.Node.GetDisplayText(0);
                 LoadMenuNameListOfFunctionModuleName(e.Node.GetDisplayText(0));
                 textEdit_FunctionModuleName.Text = _CurSelectedFunctionModuleName;
+                SelectedImageListBoxControlItemBySetting();
+            }
+        }
+
+        /// <summary>
+        /// 当前选中的功能图片事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void imageListBoxControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // 获取当前选中的项
+            var selectedItem = imageListBoxControl1.SelectedItem as ImageListBoxItem;
+            if (selectedItem != null)
+            {
+                // 获取选中项的名称
+                string itemName = selectedItem.Value.ToString();
+                _CurSelectedFuncModuleImgName = itemName;
+
+                // 获取选中项的图像索引
+                int imageIndex = selectedItem.ImageIndex;
+
+
             }
         }
 
 
 
-    }
+
+    }//Class_end
 }

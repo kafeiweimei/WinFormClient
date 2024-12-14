@@ -91,9 +91,10 @@ namespace CoffeeMilk13.UI.View
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ShowAppInfo();
             FormParaSetting();
             FunctionModuleMenu();
-            ListMenuOfCurSelectedFuncModule();
+            LoadFuncModuleFormSelectedModelInfo();
 
             CreateNewTagPageEvent();
             CloseCurSelectedTagPageEvent();
@@ -145,6 +146,7 @@ namespace CoffeeMilk13.UI.View
             //是否显示所有标签页的关闭按钮
             tabFormControl1.ShowTabCloseButtons = false;
 
+
             #endregion
 
 
@@ -166,21 +168,76 @@ namespace CoffeeMilk13.UI.View
         /// </summary>
         private void FunctionModuleMenu()
         {
-            barListItem_FunctionModule.Strings.Add("功能模块1");
-            barListItem_FunctionModule.Strings.Add("功能模块2");
-            barListItem_FunctionModule.Strings.Add("系统管理");
+            ////这是开始测试时手工添加的内容
+            //barListItem_FunctionModule.Strings.Add("功能模块1");
+            //barListItem_FunctionModule.Strings.Add("功能模块2");
+            //barListItem_FunctionModule.Strings.Add("系统管理");
+
+            //加载配置的功能模块
+            if (Global.Global_Parameter.tmpFuncModuleDic != null && Global.Global_Parameter.tmpFuncModuleDic?.Count > 0)
+            {
+                //先清空手工添加的内容
+                barListItem_FunctionModule.Strings?.Clear();
+
+                for (int i = 0; i < Global.Global_Parameter.tmpFuncModuleDic.Count; i++)
+                {
+                    string funcModuleName = Global.Global_Parameter.tmpFuncModuleDic.ElementAt(i).Key;
+                    barListItem_FunctionModule.Strings.Add(funcModuleName);
+                }
+            }
         }
 
         /// <summary>
         /// 当前选中的功能模块对应的列表菜单
         /// </summary>
-        private void ListMenuOfCurSelectedFuncModule()
+        private void ListMenuOfCurSelectedFuncModule(string curSelectedFuncModuleName)
         {
-            barListItem_FunctionMenuList.Strings.Add("菜单设置");
-            barListItem_FunctionMenuList.Strings.Add("功能模块设置");
-            barListItem_FunctionMenuList.Strings.Add("角色设置");
-            barListItem_FunctionMenuList.Strings.Add("权限设置");
-            barListItem_FunctionMenuList.Strings.Add("其他设置");
+            ////这是开始测试时手工添加的内容
+            //barListItem_FunctionMenuList.Strings.Add("菜单设置");
+            //barListItem_FunctionMenuList.Strings.Add("功能模块设置");
+            //barListItem_FunctionMenuList.Strings.Add("角色设置");
+            //barListItem_FunctionMenuList.Strings.Add("权限设置");
+            //barListItem_FunctionMenuList.Strings.Add("其他设置");
+
+            //加载配置好的功能模块对应的菜单名称列表
+            if (Global.Global_Parameter.tmpFuncModuleDic != null && Global.Global_Parameter.tmpFuncModuleDic?.Count > 0)
+            {
+                //先清空手动添加的内容
+                barListItem_FunctionMenuList.Strings?.Clear();
+
+                if (string.IsNullOrEmpty(curSelectedFuncModuleName))
+                {
+                    PopupMessage.ShowWarning($"请选择功能模块");
+                }
+                else
+                {
+                    if (Global.Global_Parameter.tmpFuncModuleDic.ContainsKey(curSelectedFuncModuleName) && 
+                        Global.Global_Parameter.tmpFuncModuleDic[curSelectedFuncModuleName]?.Count>0)
+                    {
+                        for (int i = 0; i < Global.Global_Parameter.tmpFuncModuleDic[curSelectedFuncModuleName].Count; i++)
+                        {
+                            string menuNameOfFuncModule = Global.Global_Parameter.tmpFuncModuleDic[curSelectedFuncModuleName].ElementAt(i).Key;
+                            barListItem_FunctionMenuList.Strings.Add(menuNameOfFuncModule);
+                        }
+                    }
+                    else
+                    {
+                        PopupMessage.ShowError($"当前选择的【{curSelectedFuncModuleName}】模块或其包含的菜单内容不存在，请检查后重试");
+                    }
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// 加载功能模块界面选中模块后的内容
+        /// </summary>
+        private void LoadFuncModuleFormSelectedModelInfo()
+        {
+            barListItem_FunctionMenuList.Caption = Global.Global_Parameter.curSelectedFuncModuleName;
+            curSelectedFuncModuleName = barListItem_FunctionMenuList.Caption;
+
+            ListMenuOfCurSelectedFuncModule(curSelectedFuncModuleName);
         }
 
         /// <summary>
@@ -190,34 +247,53 @@ namespace CoffeeMilk13.UI.View
         {
             tabFormControl1.PageCreated += (sender, e) =>
             {
-                switch (curSelectedFuncMenuName)
+                ////手工添加菜单的测试
+                //switch (curSelectedFuncMenuName)
+                //{
+                //    case "菜单设置":
+                //        e.Page.Text = "菜单设置";
+                //        ShowFormOfPage(new MenuSettingForm(), e.Page);
+                //        break;
+                //    case "功能模块设置":
+                //        e.Page.Text = "功能模块设置";
+                //        ShowFormOfPage(new FunctionModuleSettingForm(), e.Page);
+                //        break;
+                //    case "角色设置":
+                //        e.Page.Text = "角色设置";
+                //        ShowFormOfPage(new RoleSettingForm(), e.Page);
+                //        break;
+                //    case "权限设置":
+                //        e.Page.Text = "权限";
+                //        ShowFormOfPage(new AuthoritySettingForm(), e.Page);
+                //        break;
+                //    default:
+                //        //XtraMessageBox.Show($"当前没配置:{e.Page} 菜单");
+                //        break;
+                //}
+
+                if (string.IsNullOrEmpty(curSelectedFuncMenuName))
                 {
-                    case "菜单设置":
-                        e.Page.Text = "菜单设置";
-                        ShowFormOfPage(new MenuSettingForm(), e.Page);
-                        break;
-                    case "功能模块设置":
-                        e.Page.Text = "功能模块设置";
-                        ShowFormOfPage(new FunctionModuleSettingForm(), e.Page);
-                        break;
-                    case "角色设置":
-                        e.Page.Text = "角色设置";
-                        ShowFormOfPage(new RoleSettingForm(), e.Page);
-                        break;
-                    case "权限设置":
-                        e.Page.Text = "权限";
-                        ShowFormOfPage(new AuthoritySettingForm(), e.Page);
-                        break;
-                    default:
-                        //XtraMessageBox.Show($"当前没配置:{e.Page} 菜单");
-                        break;
+                    PopupMessage.ShowWarning($"请选择菜单");
                 }
+                else
+                {
+                    if (Global.Global_Parameter.tmpMenuDic.ContainsKey(curSelectedFuncMenuName))
+                    {
+                        //1-根据窗体的命名空间和名称创建该窗体(比如：ChartForm窗体的命名空间是Dev_WinfromTest)
+                        string curSelectedFunMenuNameNamespace = Global.Global_Parameter.tmpMenuDic[curSelectedFuncMenuName];
+                        var form = Utils.WinformUIHelper.LoadForm(curSelectedFunMenuNameNamespace);
 
-                ////1-根据窗体的命名空间和名称创建该窗体(比如：ChartForm窗体的命名空间是Dev_WinfromTest)
-                //var form = Utils.WinformUIHelper.LoadForm("CoffeeMilk13.UI.View.MenuSettingForm");
-
-                ////2-打开该窗体
-                //Utils.WinformUIHelper.OpenForm(ref form);
+                        //2、在标签页显示传入的窗体
+                        e.Page.Text = curSelectedFuncMenuName;
+                        e.Page.ShowCloseButton= DevExpress.Utils.DefaultBoolean.True;
+                        ShowFormOfPage(form, e.Page);
+                    }
+                    else
+                    {
+                        PopupMessage.ShowError($"当前系统中没有【{curSelectedFuncMenuName}】菜单，请联系管理员配置后重试");
+                    }
+                }
+               
             };
         }
 
@@ -269,6 +345,8 @@ namespace CoffeeMilk13.UI.View
             //XtraMessageBox.Show($"当前选中的模块是：{curSelectedItemName}");
             barListItem_FunctionMenuList.Caption = curSelectedItemName;
             curSelectedFuncModuleName = curSelectedItemName;
+
+            ListMenuOfCurSelectedFuncModule(curSelectedItemName);
         }
 
         /// <summary>
@@ -311,6 +389,30 @@ namespace CoffeeMilk13.UI.View
            
             
            
+        }
+
+        /// <summary>
+        /// 显示客户端的信息
+        /// </summary>
+        private void ShowAppInfo()
+        {
+            string info = $"版本号：{Utils.AppAssemblyInfo.Version} 版权：{Utils.AppAssemblyInfo.CompanyName }  {Utils.AppAssemblyInfo.Copyright}";
+
+            barStaticItem1.Caption = info;
+
+            barStaticItem1.ItemClick += OpenUrlLink;
+
+        }
+
+        /// <summary>
+        /// 在浏览器打开该链接
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenUrlLink(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string url = $"http://{Utils.AppAssemblyInfo.CompanyName}";
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(url) { UseShellExecute = true });
         }
 
         /// <summary>
@@ -358,6 +460,16 @@ namespace CoffeeMilk13.UI.View
         }
 
         /// <summary>
+        /// 功能模块按钮单击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void barListItem_FunctionModule_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FunctionModuleMenu();
+        }
+
+        /// <summary>
         /// 功能模块按钮双击事件
         /// </summary>
         /// <param name="sender"></param>
@@ -369,14 +481,40 @@ namespace CoffeeMilk13.UI.View
             this.Hide();
         }
 
+        /// <summary>
+        /// 窗体关闭事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             bool isExit = PopupMessage.ShowAskQuestion("确定关闭系统？");
             if (isExit)
             {
-                Application.Exit();
+                try
+                {
+                    Application.Exit();
+                    
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    
+                }
+                
+            }
+            else
+            {
+                //返回功能模块窗口
+                Utils.WinformUIHelper.OpenForm(ref functionModuleForm);
+                this.Hide();
             }
            
         }
-    }
+
+
+    }//Class_end
 }
