@@ -41,6 +41,7 @@
 */
 
 using DevExpress.Utils;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.BandedGrid;
@@ -158,7 +159,6 @@ namespace CoffeeMilk13.UI.Utils
 
         }
 
-
         /// <summary>
         /// 设置表格标题背景颜色
         /// </summary>
@@ -173,6 +173,7 @@ namespace CoffeeMilk13.UI.Utils
                 gridView.Columns[columnName].AppearanceHeader.BackColor = color;
             }
         }
+
 
         /// <summary>
         /// 设置选中行颜色
@@ -567,12 +568,7 @@ namespace CoffeeMilk13.UI.Utils
         {
             if (gridView==null)
             {
-                MessageBox.Show("表格为空！导出失败", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (gridView.RowCount > 65535)
-            {
-                MessageBox.Show("当前导出数据不能大于65535行！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("表格为空！导出失败", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -585,6 +581,11 @@ namespace CoffeeMilk13.UI.Utils
                 string filter = saveFileDialog.FileName.Substring(saveFileDialog.FileName.LastIndexOf(".") + 1);
                 if (filter == "xls")
                 {
+                    if (gridView.RowCount > 65535)
+                    {
+                        XtraMessageBox.Show("当前导出数据不能大于65535行！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     XlsExportOptions options = new XlsExportOptions();
                     options.TextExportMode = TextExportMode.Value;
                     options.ExportMode = XlsExportMode.SingleFile;
@@ -592,15 +593,20 @@ namespace CoffeeMilk13.UI.Utils
                 }
                 else
                 {
+                    if (gridView.RowCount > 1048575)
+                    {
+                        XtraMessageBox.Show("当前导出数据不能大于1048575行！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     XlsxExportOptions options = new XlsxExportOptions();
                     options.TextExportMode = TextExportMode.Value;
                     options.ExportMode = XlsxExportMode.SingleFile;
                     gridView.ExportToXlsx(saveFileDialog.FileName, options);
                 }
 
-                MessageBox.Show("导出成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("导出成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                if (MessageBox.Show("保存成功，是否打开文件？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (XtraMessageBox.Show("保存成功，是否打开文件？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     System.Diagnostics.Process.Start(saveFileDialog.FileName);
                 }

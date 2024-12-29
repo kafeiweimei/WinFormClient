@@ -114,6 +114,12 @@
     <Compile Include="View\FunctionModuleSettingForm.Designer.cs">
       <DependentUpon>FunctionModuleSettingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GridControlOpcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GridControlOpcForm.Designer.cs">
+      <DependentUpon>GridControlOpcForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FunctionModuleSettingForm.resx">
       <DependentUpon>FunctionModuleSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GridControlOpcForm.resx">
+      <DependentUpon>GridControlOpcForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
