@@ -14,27 +14,27 @@
 
 ## 二、部分效果图
 
-![登录界面](.\Documents\images\登录界面.png)
+![登录界面](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/登录界面.png)
 
-![功能模块](.\Documents\images\功能模块.png)
+![功能模块](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/功能模块.png)
 
-![主菜单功能模块](.\Documents\images\主菜单功能模块.png)
+![主菜单功能模块](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/主菜单功能模块.png)
 
-![主菜单系统功能](.\Documents\images\主菜单系统功能.png)
+![主菜单系统功能](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/主菜单系统功能.png)
 
-![菜单设置](.\Documents\images\菜单设置.png)
+![菜单设置](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/菜单设置.png)
 
-![功能模块设置](.\Documents\images\功能模块设置.png)
+![功能模块设置](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/功能模块设置.png)
 
-![角色设置](.\Documents\images\角色设置.png)
+![角色设置](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/角色设置.png)
 
-![表格常用操作](.\Documents\images\表格常用操作.gif)
+![表格常用操作](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/表格常用操作.gif)
 
-![Grid表格与DataTable操作](.\Documents\images\Grid表格与DataTable操作.gif)
+![Grid表格与DataTable操作](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/Grid表格与DataTable操作.gif)
 
 ## 三、基础框架内存版演示
 
 ### 3.1、WinFormClient_V0.1数据内存版_20241214
 
-<video src=".\Documents\videos\WinFormClient_V0.1数据内存版_20241214.mp4"></video>
+<video src="https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/videos/WinFormClient_V0.1%E6%95%B0%E6%8D%AE%E5%86%85%E5%AD%98%E7%89%88_20241214.mp4"></video>
 
