@@ -40,6 +40,8 @@ namespace CoffeeMilk13.UI.View
             this.Address = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Work = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton_EditGridMutiColumnDatas = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton_EditGridSingleColumnDatas = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_DisableEditGridAllData = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_EnableEditGridAllData = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_ExportGridData = new DevExpress.XtraEditors.SimpleButton();
@@ -53,8 +55,6 @@ namespace CoffeeMilk13.UI.View
             this.simpleButton_ModifyCellBackColor = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_ModifyHeaderBackColor = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl_TipInfo = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton_EditGridSingleColumnDatas = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton_EditGridMutiColumnDatas = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -175,6 +175,28 @@ namespace CoffeeMilk13.UI.View
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1281, 139);
             this.panelControl2.TabIndex = 1;
+            // 
+            // simpleButton_EditGridMutiColumnDatas
+            // 
+            this.simpleButton_EditGridMutiColumnDatas.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.simpleButton_EditGridMutiColumnDatas.Appearance.Options.UseFont = true;
+            this.simpleButton_EditGridMutiColumnDatas.Location = new System.Drawing.Point(782, 103);
+            this.simpleButton_EditGridMutiColumnDatas.Name = "simpleButton_EditGridMutiColumnDatas";
+            this.simpleButton_EditGridMutiColumnDatas.Size = new System.Drawing.Size(193, 31);
+            this.simpleButton_EditGridMutiColumnDatas.TabIndex = 13;
+            this.simpleButton_EditGridMutiColumnDatas.Text = "编辑表格多列数据";
+            this.simpleButton_EditGridMutiColumnDatas.Click += new System.EventHandler(this.simpleButton_EditGridMutiColumnDatas_Click);
+            // 
+            // simpleButton_EditGridSingleColumnDatas
+            // 
+            this.simpleButton_EditGridSingleColumnDatas.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.simpleButton_EditGridSingleColumnDatas.Appearance.Options.UseFont = true;
+            this.simpleButton_EditGridSingleColumnDatas.Location = new System.Drawing.Point(571, 103);
+            this.simpleButton_EditGridSingleColumnDatas.Name = "simpleButton_EditGridSingleColumnDatas";
+            this.simpleButton_EditGridSingleColumnDatas.Size = new System.Drawing.Size(193, 31);
+            this.simpleButton_EditGridSingleColumnDatas.TabIndex = 12;
+            this.simpleButton_EditGridSingleColumnDatas.Text = "编辑表格单列数据";
+            this.simpleButton_EditGridSingleColumnDatas.Click += new System.EventHandler(this.simpleButton_EditGridSingleColumnDatas_Click);
             // 
             // simpleButton_DisableEditGridAllData
             // 
@@ -318,28 +340,6 @@ namespace CoffeeMilk13.UI.View
             this.labelControl_TipInfo.TabIndex = 2;
             this.labelControl_TipInfo.Text = "提示信息";
             // 
-            // simpleButton_EditGridSingleColumnDatas
-            // 
-            this.simpleButton_EditGridSingleColumnDatas.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.simpleButton_EditGridSingleColumnDatas.Appearance.Options.UseFont = true;
-            this.simpleButton_EditGridSingleColumnDatas.Location = new System.Drawing.Point(571, 103);
-            this.simpleButton_EditGridSingleColumnDatas.Name = "simpleButton_EditGridSingleColumnDatas";
-            this.simpleButton_EditGridSingleColumnDatas.Size = new System.Drawing.Size(193, 31);
-            this.simpleButton_EditGridSingleColumnDatas.TabIndex = 12;
-            this.simpleButton_EditGridSingleColumnDatas.Text = "编辑表格单列数据";
-            this.simpleButton_EditGridSingleColumnDatas.Click += new System.EventHandler(this.simpleButton_EditGridSingleColumnDatas_Click);
-            // 
-            // simpleButton_EditGridMutiColumnDatas
-            // 
-            this.simpleButton_EditGridMutiColumnDatas.Appearance.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.simpleButton_EditGridMutiColumnDatas.Appearance.Options.UseFont = true;
-            this.simpleButton_EditGridMutiColumnDatas.Location = new System.Drawing.Point(782, 103);
-            this.simpleButton_EditGridMutiColumnDatas.Name = "simpleButton_EditGridMutiColumnDatas";
-            this.simpleButton_EditGridMutiColumnDatas.Size = new System.Drawing.Size(193, 31);
-            this.simpleButton_EditGridMutiColumnDatas.TabIndex = 13;
-            this.simpleButton_EditGridMutiColumnDatas.Text = "编辑表格多列数据";
-            this.simpleButton_EditGridMutiColumnDatas.Click += new System.EventHandler(this.simpleButton_EditGridMutiColumnDatas_Click);
-            // 
             // GridControlOpcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -349,7 +349,7 @@ namespace CoffeeMilk13.UI.View
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "GridControlOpcForm";
-            this.Text = "GridControlOpcForm";
+            this.Text = "Grid表格常用操作";
             this.Load += new System.EventHandler(this.GridControlOpcForm_Load);
             this.Resize += new System.EventHandler(this.GridControlOpcForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

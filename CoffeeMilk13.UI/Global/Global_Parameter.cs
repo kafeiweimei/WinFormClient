@@ -56,7 +56,8 @@ namespace Global
             ["角色设置"] = "CoffeeMilk13.UI.View.RoleSettingForm",
             ["权限设置"] = "CoffeeMilk13.UI.View.AuthoritySettingForm",
             ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
-            ["表格操作"] = "CoffeeMilk13.UI.View.GridControlOpcForm",
+            ["Grid表格常用操作"] = "CoffeeMilk13.UI.View.GridControlOpcForm",
+            ["Grid表格与DataTable操作"] = "CoffeeMilk13.UI.View.GridControlDataTableOpcForm"
         };
 
         //临时功能模块字典
