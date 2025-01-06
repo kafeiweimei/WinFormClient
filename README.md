@@ -18,23 +18,23 @@
 
 ![功能模块](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97.png?raw=true)
 
-![主菜单功能模块](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/主菜单功能模块.png)
+![主菜单功能模块](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E4%B8%BB%E8%8F%9C%E5%8D%95%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97.png?raw=true)
 
-![主菜单系统功能](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/主菜单系统功能.png)
+![主菜单系统功能](https://github.com/kafeiweimei/WinFormClient/blob/6e163bf193578ccec670cb7a825d6d8c15eac270/Documents/images/%E4%B8%BB%E8%8F%9C%E5%8D%95%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD.png?raw=true)
 
-![菜单设置](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/菜单设置.png)
+![菜单设置](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE.png?raw=true)
 
-![功能模块设置](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/功能模块设置.png)
+![功能模块设置](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E8%AE%BE%E7%BD%AE.png?raw=true)
 
-![角色设置](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/角色设置.png)
+![角色设置](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E8%A7%92%E8%89%B2%E8%AE%BE%E7%BD%AE.png?raw=true)
 
-![表格常用操作](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/表格常用操作.gif)
+![表格常用操作]([https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/表格常用操作.gif](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E8%A1%A8%E6%A0%BC%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C.gif?raw=true))
 
-![Grid表格与DataTable操作](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/Grid表格与DataTable操作.gif)
+![Grid表格与DataTable操作](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/Grid%E8%A1%A8%E6%A0%BC%E4%B8%8EDataTable%E6%93%8D%E4%BD%9C.gif?raw=true)
 
 ## 三、基础框架内存版演示
 
 ### 3.1、WinFormClient_V0.1数据内存版_20241214
 
-<video src="https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/videos/WinFormClient_V0.1%E6%95%B0%E6%8D%AE%E5%86%85%E5%AD%98%E7%89%88_20241214.mp4"></video>
+<video src="https://github.com/kafeiweimei/WinFormClient/raw/refs/heads/main/Documents/videos/WinFormClient_V0.1%E6%95%B0%E6%8D%AE%E5%86%85%E5%AD%98%E7%89%88_20241214.mp4"></video>
 
