@@ -28,7 +28,7 @@
 
 ![角色设置](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E8%A7%92%E8%89%B2%E8%AE%BE%E7%BD%AE.png?raw=true)
 
-![表格常用操作]([https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/表格常用操作.gif](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E8%A1%A8%E6%A0%BC%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C.gif?raw=true))
+![表格常用操作](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E8%A1%A8%E6%A0%BC%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C.gif?raw=true)
 
 ![Grid表格与DataTable操作](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/Grid%E8%A1%A8%E6%A0%BC%E4%B8%8EDataTable%E6%93%8D%E4%BD%9C.gif?raw=true)
 
