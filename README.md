@@ -14,9 +14,9 @@
 
 ## 二、部分效果图
 
-![登录界面](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/登录界面.png)
+![登录界面](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2.png?raw=true)
 
-![功能模块](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/功能模块.png)
+![功能模块](https://github.com/kafeiweimei/WinFormClient/blob/main/Documents/images/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97.png?raw=true)
 
 ![主菜单功能模块](https://github.com/kafeiweimei/WinFormClient/tree/main/Documents/images/主菜单功能模块.png)
 
