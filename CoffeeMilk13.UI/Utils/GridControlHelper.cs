@@ -34,6 +34,17 @@
 *		    28、给表格指定单元格都保留2位小数后添加%号
 *		    29、填充一行数据到表格指定行（起始列）
 *		    30、给指定列绘制进度条
+*		    31、绑定表格表头列、标题、数据
+*		    32、绑定表格表头列和标题
+*		    33、绑定表格数据
+*		    34、获取到当前表格字体
+*		    35、设置表头显示名称的字体
+*		    36、设置表头显示名称字体的颜色
+*		    37、设置表格行显示名称的字体
+*		    38、设置表格多选
+*		        1、设置表格行能够多选全选
+*		        2、获取到所有选中行的所有数据
+*		    39、设置标题头的ShowGroupPanel
 *		    
 *	Date：2021
 *	Version：0.1版本
@@ -1039,6 +1050,171 @@ namespace CoffeeMilk13.UI.Utils
         }
 
         #endregion
+
+        /// <summary>
+        /// 绑定表格表头列、标题、数据
+        /// </summary>
+        /// <typeparam name="T">实体类模型</typeparam>
+        /// <param name="columnNameAndCaption">表格的列名称和标题显示名称</param>
+        /// <param name="gridControl">GridControl组件</param>
+        /// <param name="dataList">需要绑定的数据列表</param>
+        public static void BindHeaderAndDataToGridControl<T>(Dictionary<string, string> columnNameAndCaption,
+            GridControl gridControl, List<T> dataList) where T : class
+        {
+            DataTable dataTable = new DataTable();
+            BindHeaderToGridControl(columnNameAndCaption, ref dataTable);
+            BindDataToGridControl(gridControl, dataList,dataTable);
+        }
+
+        /// <summary>
+        /// 绑定表格表头列和标题
+        /// </summary>
+        /// <param name="columnNameAndCaption">表格的列名称和标题显示名称</param>
+        /// <param name="needAddHeaderDataTable">需要添加标题的DataTable</param>
+        public static void BindHeaderToGridControl(Dictionary<string, string> columnNameAndCaption,ref DataTable needAddHeaderDataTable)
+        {
+            if (columnNameAndCaption == null || columnNameAndCaption.Count <= 0) return;
+
+            int count = columnNameAndCaption.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                DataColumn dataColumn = new DataColumn();
+
+                dataColumn.ColumnName = columnNameAndCaption.ElementAt(i).Key;
+                dataColumn.Caption = columnNameAndCaption.ElementAt(i).Value;
+                if (!needAddHeaderDataTable.Columns.Contains(dataColumn.ColumnName))
+                {
+                    needAddHeaderDataTable.Columns.Add(dataColumn);
+                }
+
+            }
+
+        }
+
+        /// <summary>
+        /// 绑定表格数据
+        /// </summary>
+        /// <typeparam name="T">实体类模型</typeparam>
+        /// <param name="gridControl">GridControl组件</param>
+        /// <param name="dataList">需要绑定的数据列表</param>
+        /// <param name="haveHeaderDataTable">有标题的DataTable</param>
+        public static void BindDataToGridControl<T>(GridControl gridControl, List<T> dataList,DataTable haveHeaderDataTable) where T : class
+        {
+            gridControl.DataSource = null;
+
+            if (dataList == null || dataList.Count <= 0) return;
+
+            foreach (var item in dataList)
+            {
+                //返回信息为类的属性名:值，以逗号分割的字符串（示例【ID:JK001,Name:杨万里,Sex:男,IdCard:523033199001026780,】）
+                string allPropertiesString = ClassHelper.GetAllProperties(item);
+
+                ClassHelper.AnalyAllPropertiesToDataTable(allPropertiesString,ref haveHeaderDataTable);
+
+            }
+
+            gridControl.DataSource = haveHeaderDataTable;
+        }
+
+        /// <summary>
+        /// 获取到当前表格字体
+        /// </summary>
+        /// <param name="gridControl">gridControl组件</param>
+        /// <returns>返回表格字体</returns>
+        public static Font GetGridControlFont(GridControl gridControl)
+        {
+            return gridControl.Font;
+        }
+
+        /// <summary>
+        /// 设置表头显示名称的字体
+        /// </summary>
+        /// <param name="gridView">gridView组件</param>
+        /// <param name="font">字体</param>
+        public static void SettingGirdHeaderFont(GridView gridView, Font font)
+        {
+            gridView.Appearance.HeaderPanel.Font = font;
+        }
+
+        /// <summary>
+        /// 设置表头显示名称字体颜色
+        /// </summary>
+        /// <param name="gridView">gridView组件</param>
+        /// <param name="color">字体颜色</param>
+        public static void SettingGridHeaderFontColor(GridView gridView, Color color)
+        {
+            int count = gridView.Columns.Count;
+            for (int i = 0; i < count; i++)
+            {
+                gridView.Columns[i].AppearanceHeader.ForeColor = color;
+            }
+        }
+
+        /// <summary>
+        /// 设置表格行显示名称的字体
+        /// </summary>
+        /// <param name="gridView">gridView组件</param>
+        /// <param name="font">字体</param>
+        public static void SettingGirdRowFont(GridView gridView, Font font)
+        {
+            gridView.Appearance.Row.Font = font;
+        }
+
+        #region   设置表格多选
+
+        /// <summary>
+        /// 设置表格行能够多选全选
+        /// </summary>
+        /// <param name="gridView">gridView组件</param>
+        public static void SettingGridRowsMutiSelect(GridView gridView)
+        {
+            //禁用数据编辑功能
+            gridView.OptionsBehavior.Editable = false;
+
+            //设置可以选中多行
+            gridView.OptionsSelection.MultiSelect = true;
+            gridView.OptionsSelection.MultiSelectMode = GridMultiSelectMode.CheckBoxRowSelect;
+        }
+
+        /// <summary>
+        /// 获取到所有选中行的所有数据
+        /// </summary>
+        /// <param name="gridView">gridView组件</param>
+        public static string GetSelectedAllDatas(GridView gridView)
+        {
+            //获取到当前选择行的行号
+            int[] rows = gridView.GetSelectedRows();
+
+            string strTmp = null;
+            int len = rows.Length;
+            for (int i = 0; i < len; i++)
+            {
+                //获取到每一行的数据
+                foreach (GridColumn item in gridView.Columns)
+                {
+                    //获取到当前行的所有数据
+                    strTmp += gridView.GetDataRow(rows[i])[item.FieldName].ToString() + ",";
+                }
+                strTmp += "\n";
+            }
+
+            return strTmp;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// 设置标题头的ShowGroupPanel
+        /// </summary>
+        /// <param name="gridView">gridView组件</param>
+        /// <param name="showGroupPanelText">showGroupPanel显示的标题文本</param>
+        /// <param name="isShow">是否显示（true:表示显示）</param>
+        public static void SettingShowHeaderGroup(GridView gridView, string showGroupPanelText, bool isShow)
+        {
+            gridView.OptionsView.ShowGroupPanel = isShow;
+            gridView.GroupPanelText = showGroupPanelText;
+        }
 
     }//Class_end
 
