@@ -58,7 +58,8 @@ namespace Global
             ["测试菜单1"] = "CoffeeMilk13.UI.View.XtraForm1",
             ["Grid表格常用操作"] = "CoffeeMilk13.UI.View.GridControlOpcForm",
             ["Grid表格与DataTable操作"] = "CoffeeMilk13.UI.View.GridControlDataTableOpcForm",
-            ["Grid表格自定义分页操作"] = "CoffeeMilk13.UI.View.GridControlCustomPageForm"
+            ["Grid表格自定义分页操作"] = "CoffeeMilk13.UI.View.GridControlCustomPageForm",
+            ["各类图表"]= "CoffeeMilk13.UI.View.ChartForm"
         };
 
         //临时功能模块字典

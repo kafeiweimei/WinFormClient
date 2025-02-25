@@ -192,33 +192,6 @@ namespace CoffeeMilk13.UI.View
             GridControlHelper.SettingGridHeaderFontColor(gridView1, Color.Orange);
 
 
-            //////绑定表头列、标题、数据
-            ////gridControlOpc.BindHeaderAndDataToGridControl(dic,gridControl1,GetPeopeoInfos());
-
-            //////隐藏指定列
-            ////gridControlOpc.HideAppointColumn(gridView1, 0);
-            ////gridControlOpc.HideAppointColumn(gridView1, "ID");
-
-
-
-            ////自动适配所有字段列宽度
-            //gridControlOpc.AutoMatchAllColumnWidth(gridView1);
-
-
-            ////自动适配某列字段宽度
-            ////gridControlOpc.AutoMatchSingleColumnWidth(gridView1,0);
-            //gridControlOpc.AutoMatchSingleColumnWidth(gridView1, "IdCard");
-
-            ////设置奇偶行颜色
-            //gridControlOpc.SettingOddEvenRowDefaultColor(gridView1);
-
-            ////设置选择行颜色
-            //gridControlOpc.SettingSelectedRowDefaultColor(gridView1);
-
-            ////设置表格是否允许编辑
-            //gridControlOpc.SettingGridIsEdit(gridView1, false);
-
-
             //设置表格全选
             GridControlHelper.SettingGridRowsMutiSelect(gridView1);
 

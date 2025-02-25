@@ -1,0 +1,7 @@
+https://docs.devexpress.com/WindowsForms/DevExpress.XtraCharts.ChartControl
+
+DevExpress的图表内容示例项目：https://github.com/orgs/DevExpress-Examples/repositories?type=all&q=winforms-charts
+
+柱状图：https://github.com/DevExpress-Examples/winforms-charts-create-side-by-side-bar-chart
+
+饼   图：https://github.com/DevExpress-Examples/winforms-charts-create-a-pie-chart?tab=readme-ov-file
