@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.34902.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMilk13.UI", "CoffeeMilk13.UI\CoffeeMilk13.UI.csproj", "{86FDF761-8898-4C9B-9F32-CB0EB9A97E05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMilk13.DB", "CoffeeMilk13.DB\CoffeeMilk13.DB.csproj", "{07548A11-67CC-4F96-9FF4-9BE89268362C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMilk13.SCADA", "CoffeeMilk13.SCADA\CoffeeMilk13.SCADA.csproj", "{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{86FDF761-8898-4C9B-9F32-CB0EB9A97E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86FDF761-8898-4C9B-9F32-CB0EB9A97E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86FDF761-8898-4C9B-9F32-CB0EB9A97E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07548A11-67CC-4F96-9FF4-9BE89268362C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07548A11-67CC-4F96-9FF4-9BE89268362C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07548A11-67CC-4F96-9FF4-9BE89268362C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07548A11-67CC-4F96-9FF4-9BE89268362C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
