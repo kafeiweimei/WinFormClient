@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMilk13.DB", "CoffeeMi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMilk13.SCADA", "CoffeeMilk13.SCADA\CoffeeMilk13.SCADA.csproj", "{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeMilk13.TimeSeriesDB", "CoffeeMilk13.TimeSeriesDB\CoffeeMilk13.TimeSeriesDB.csproj", "{2D9436FF-B033-4901-8033-1E5E94869A84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AD636FF-19B2-4FF4-8BFC-2850A378E0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D9436FF-B033-4901-8033-1E5E94869A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D9436FF-B033-4901-8033-1E5E94869A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D9436FF-B033-4901-8033-1E5E94869A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D9436FF-B033-4901-8033-1E5E94869A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
