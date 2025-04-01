@@ -12,8 +12,9 @@ namespace CoffeeMilk13.SCADA
         static void Main(string[] args)
         {
             Console.WriteLine("——开始SCADA模块测试——");
-            TestOPCUA();
+            //TestOPCUA();
 
+            TestOPCDA();
 
             Console.ReadLine();
         }
@@ -26,6 +27,18 @@ namespace CoffeeMilk13.SCADA
             Test_OPCUAHelper test_OPCUAHelper = new Test_OPCUAHelper();
             test_OPCUAHelper.OpenConn();
         }
+
+        //测试OPCDA
+        private static void TestOPCDA()
+        {
+            Console.WriteLine("开始进行OPCDA测试");
+            Test_OPCDAHelper test_OPCDAHelper = new Test_OPCDAHelper();
+            test_OPCDAHelper.GetAllServerItems();
+            test_OPCDAHelper.GetNeedReadItemsRealData(true);
+        }
+
+
+
 
     }//Class_end
 }

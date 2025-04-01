@@ -133,12 +133,14 @@ F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winf
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\bin\Debug\System.Memory.xml
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\bin\Debug\System.Numerics.Vectors.xml
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.AssemblyReference.cache
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.exe.config
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.CoreCompileInputs.cache
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.CopyComplete
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.exe
 F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.pdb
-F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.AssemblyReference.cache
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\Interop.OPCAutomation.dll
+F:\0-AllProjectsFw\1-CS架构\1-WinForm架构\1-开发使用的项目程序\winformclient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.ResolveComReference.cache
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\bin\Debug\CoffeeMilk13.SCADA.exe.config
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\bin\Debug\CoffeeMilk13.SCADA.exe
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\bin\Debug\CoffeeMilk13.SCADA.pdb
@@ -275,7 +277,10 @@ F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\bin\Deb
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\bin\Debug\System.Numerics.Vectors.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.AssemblyReference.cache
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.SuggestedBindingRedirects.cache
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.exe.config
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\Interop.OPCAutomation.dll
+F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.ResolveComReference.cache
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.CoreCompileInputs.cache
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.csproj.CopyComplete
 F:\AllDevelopProjects\AllGithubProjects\WinFormClient\CoffeeMilk13.SCADA\obj\Debug\CoffeeMilk13.SCADA.exe
