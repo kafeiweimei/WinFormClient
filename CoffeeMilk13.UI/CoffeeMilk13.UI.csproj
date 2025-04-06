@@ -99,6 +99,8 @@
     <Compile Include="Utils\EveryDayLog.cs" />
     <Compile Include="Utils\FolderFileHelper.cs" />
     <Compile Include="Utils\AppAssemblyInfo.cs" />
+    <Compile Include="Utils\FolderOPC.cs" />
+    <Compile Include="Utils\FtpHelper.cs" />
     <Compile Include="Utils\GridControlHelper.cs" />
     <Compile Include="Utils\PopupMessage.cs" />
     <Compile Include="Utils\TreeListHelper.cs" />
@@ -114,6 +116,12 @@
     </Compile>
     <Compile Include="View\ChartForm.Designer.cs">
       <DependentUpon>ChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FTPOperateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FTPOperateForm.Designer.cs">
+      <DependentUpon>FTPOperateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FunctionModuleForm.cs">
       <SubType>Form</SubType>
@@ -200,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChartForm.resx">
       <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FTPOperateForm.resx">
+      <DependentUpon>FTPOperateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FunctionModuleForm.resx">
       <DependentUpon>FunctionModuleForm.cs</DependentUpon>

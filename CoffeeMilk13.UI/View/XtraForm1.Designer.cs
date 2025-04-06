@@ -50,15 +50,15 @@ namespace CoffeeMilk13.UI.View
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeList1.Location = new System.Drawing.Point(0, 0);
             this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(155, 384);
+            this.treeList1.Size = new System.Drawing.Size(155, 582);
             this.treeList1.TabIndex = 0;
             // 
             // treeList2
             // 
             this.treeList2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.treeList2.Location = new System.Drawing.Point(467, 0);
+            this.treeList2.Location = new System.Drawing.Point(1126, 0);
             this.treeList2.Name = "treeList2";
-            this.treeList2.Size = new System.Drawing.Size(155, 384);
+            this.treeList2.Size = new System.Drawing.Size(155, 582);
             this.treeList2.TabIndex = 1;
             // 
             // panelControl1
@@ -67,7 +67,7 @@ namespace CoffeeMilk13.UI.View
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(155, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(312, 384);
+            this.panelControl1.Size = new System.Drawing.Size(971, 582);
             this.panelControl1.TabIndex = 2;
             // 
             // treeList3
@@ -81,7 +81,7 @@ namespace CoffeeMilk13.UI.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 384);
+            this.ClientSize = new System.Drawing.Size(1281, 582);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.treeList2);
             this.Controls.Add(this.treeList1);
