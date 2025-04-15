@@ -14,7 +14,9 @@ namespace CoffeeMilk13.SCADA
             Console.WriteLine("——开始SCADA模块测试——");
             //TestOPCUA();
 
-            TestOPCDA();
+            //TestOPCDA();
+
+            TestMqtt();
 
             Console.ReadLine();
         }
@@ -37,7 +39,14 @@ namespace CoffeeMilk13.SCADA
             test_OPCDAHelper.GetNeedReadItemsRealData(true);
         }
 
+        //测试MQTT
+        private static void TestMqtt()
+        {
+            Console.WriteLine($"开始测试MQTT");
+            //Test_MqttClientHelper.Test();
 
+            Test_MqttClientHelper.TestSSL();
+        }
 
 
     }//Class_end
