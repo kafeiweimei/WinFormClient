@@ -10,6 +10,8 @@
 2、DevExpress20.1.3	下载地址为【https://www.devexpress.com/】 	
 
 3、项目框架为：.NET Framework 4.5.2
+
+关于DevExpress与WinForm的博客专栏地址是：[Winform相关教程_牛奶咖啡13的博客-CSDN博客](https://blog.csdn.net/xiaochenxihua/category_9993043.html?spm=1001.2014.3001.5482) 欢迎大家一起来学习探讨
 ~~~
 
 ## 二、部分效果图
